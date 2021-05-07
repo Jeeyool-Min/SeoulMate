@@ -8,6 +8,7 @@ button{
     width:95px;
     height: 25px;
     border: 0 none;
+    transform: rotate(-0.03deg);
     box-shadow: 1px 1px 0px 0.5px rgba(0, 0, 0, 0.25);
 }
 

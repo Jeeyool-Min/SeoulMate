@@ -1,0 +1,112 @@
+
+.btn1 {
+    position: fixed;
+    top: 10px;
+    left: 150px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: left 0.4s ease;
+    z-index: 1000;
+}
+
+/* .btn1.click {left: -60px;} */
+
+.btn1 span {
+    color: #3B3838;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.btn1.click span:before {
+    content: '\f00d';
+}
+.sidebar {
+    position: fixed;
+    width: 198px;
+    height: 335px;
+    left: -250px;
+    top:55px;
+    background: rgb(255,248,243);
+    transition: left 0.4s ease;
+}
+
+.sidebar.show {
+    left:0px;
+}
+
+.sidebar .text {
+    color: rgb(148,127,116);
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 65px;
+    text-align: center;
+    background: #F2F2F2;
+    letter-spacing: 1px;
+}
+
+.sidebar ul {
+    padding-inline-start: 0px;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+.sidebar ul li {
+    font-family: 'KoPubDotum';
+    list-style: none;
+    line-height: 60px;
+    font-weight: 200;
+    -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.sidebar ul li a{
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+nav ul li:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.0.5);
+}
+
+nav ul li.active a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+nav ul .feat-show.show {
+    display: block;
+}
+
+nav ul .serv-show.show1 {
+    display: block;
+}
+
+nav ul li a {
+    font-size: 14px;
+    color: #e6e6e6;
+    display: block;
+    width: 100%;
+    /* padding-left: 20px; */
+}
+
+nav ul li.active ul li a {
+    color: #e6e6e6;
+    background: #1b1b1b;
+    border-left-color: transparent;
+    display: block;
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color:#F2F2F2!important;
+    background: rgb(148,127,116)!important;
+}

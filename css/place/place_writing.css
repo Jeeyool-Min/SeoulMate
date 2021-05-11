@@ -42,6 +42,9 @@
     font-size: 14px;
     transform: rotate(-0.03deg);
 }
+.basicInfo option{
+    transform: rotate(-0.03deg);
+}
 .basicInfo label{
     display: block;
     padding-bottom: 5px;

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="plan-add-css/plan-add.css" />
+    <title>마이페이지 | 추가하기</title>
+  </head>
+  <body>
+    <header>
+      <div class="home">
+        <a class="seoulMate" href="main.html"
+          ><img class="seoulMate" src="../image/SeoulMate2.png"
+        /></a>
+      </div>
+      <span class="top_button">
+        <a id="join" href="#">회원가입</a>
+        <a id="login" href="#">로그인</a>
+      </span>
+      <nav id="menu">
+        <ul id="menu_ul">
+          <li class="menu_li"><a href="#"> 01 추천여행코스 </a></li>
+          <li class="menu_li">
+            <a href="places_main.html"> 02 인기여행지 </a>
+          </li>
+          <li class="menu_li"><a href="#"> 03 자유게시판 </a></li>
+          <li class="menu_li"><a href="#"> 04 공지사항 </a></li>
+          <li class="menu_li"><a href="../mypage/mypage.html"> 05 마이페이지 </a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="add-form">
+        <form>
+          <div class="add-button">
+            <input class="button" type="button" value="저장" />
+            <input class="button" type="reset" value="초기화" />
+          </div>
+          <div class="add-information">
+            <input class="information" type="text" placeholder="제목" />
+            <input class="information information-date" type="date" />
+            <span>-</span>
+            <input class="information" type="date" />
+            <input type="checkbox" />
+            <span>당일</span>
+          </div>
+          <div class="add-detail">
+            <span>세부정보</span>
+            <div class="add-detail__diary">
+                <div class="add-diary__days"><p>Day1</p></div>
+                    <div class="add-diary__circle">
+                         <div class="circle"></div>
+                         <p>+(더블 클릭)</p>
+                    </div>
+                    <div class="add-diary__circle">
+                        <div class="circle"></div>
+                        <p>+</p>
+                   </div>
+                   <div class="add-diary__circle">
+                    <div class="circle"></div>
+                    <p>+</p>
+               </div>
+               <div class="add-diary__circle">
+                <div class="circle"></div>
+                <p>+</p>
+           </div>
+            </div>
+        </form>
+      </div>
+      <ul class="side-bar long">
+        <li><a href="#"> 마이페이지</a></li>
+        <li><a href="#"> 스크랩</a></li>
+        <li><a href="../mypage-setting/setting.html"> 환경설정</a></li>
+      </ul>
+    </main>
+    <footer>
+      <p>
+        &copy; 서울여행길잡이 SeoulMate <br />
+        이메일 : team1_ezen21@google.com
+      </p>
+    </footer>
+  </body>
+</html>

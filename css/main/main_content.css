@@ -32,14 +32,14 @@ article h2{
 }
 
 .thumbnail_img{
-background-color:white;
-border-radius: 5%;
-width:230px;
-height:230px;
-background-size:cover;
-background-repeat:no-repeat;
-background-position:center center;
-vertical-align: middle;
+    background-color:white;
+    border-radius: 5%;
+    width:230px;
+    height:230px;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center center;
+    vertical-align: middle;
 }
 .thumbnail_txt{
     /* margin:20px; */

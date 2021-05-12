@@ -9,24 +9,37 @@ input{
 
 .add-form {
   margin: 50px auto;
+  margin-top: 30px;
   width: 884px;
 }
 
 .add-button {
-  width: 884px;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
-  padding-bottom: 20px;
+  position: absolute;
+  width: 170px;
+  height: 23px;
+  display: inline-block;
+  top: 77px;
+  right: 0px;
 }
 
-/* .button {
-  font-size: 20px;
-  margin-right: 20px;
-  padding: 0px 20px;
-  border: 0.5px solid rgba(0, 0, 0, 0.5);
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.5);
-  
-} */
+input[type="text" i]{
+  font-family: 'KoPubDotum';
+  width:300px;
+  font-size: 12px;
+  padding-left:5px;
+  border:1.5px rgb(178, 178, 178) solid;
+  height: 20px;
+}
+
+input[type="date" i]{
+  font-family: 'KoPubDotum';
+  width:138.5px;
+  font-size: 12px;
+  padding-left:5px;
+  border:1.5px rgb(178, 178, 178) solid;
+  height: 20px;
+}
+
 .button{
   color: black;
   padding-top: 2px;
@@ -39,7 +52,7 @@ input{
   text-align: center;
   margin-top: 5px;
   width:80px;
-  height:21px;
+  height:23px;
   box-sizing: border-box;
   align-items: flex-end;
   font-size: 12px;
@@ -53,12 +66,26 @@ input{
 
 .add-information {
   margin-top: 20px;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1.5px rgb(217, 217, 217) solid;
   padding-bottom: 20px;
+}
+.add-information span {
+  font-size: 14px;
+  /* transform: translateY(10px); */
+  /* position: relative; */
+  /* top: -2px; */
+}
+.add-information .line1{
+  display: block;
+  width:880px;
+  margin-bottom: 10px;
+}
+.add-information .line2{
+  display: block;
 }
 
 .information {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .information-date {

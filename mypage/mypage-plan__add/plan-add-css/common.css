@@ -87,6 +87,7 @@ a:-webkit-any-link {
   display: inline-block;
 }
 #menu ul {
+  list-style: none;
   text-align: center;
   position: relative;
   width: 600px;

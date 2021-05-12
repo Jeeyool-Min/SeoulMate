@@ -5,31 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="plan-add-css/plan-add.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>마이페이지 | 추가하기</title>
   </head>
   <body>
-    <header>
-      <div class="home">
-        <a class="seoulMate" href="main.html"
-          ><img class="seoulMate" src="../image/SeoulMate2.png"
-        /></a>
+    <header class="subpage">
+      <div class="home detail_home">
+          <a class="seoulMate" href='../../html/main.html'><img class="seoulMate" src="../image/SeoulMate2.png"></a>
       </div>
-      <span class="top_button">
-        <a id="join" href="#">회원가입</a>
-        <a id="login" href="#">로그인</a>
+      <span class="top_button detail_top_button">
+        <a id = "join" href="Signup.html" >회원가입</a>
+        <a id = "login" href="Signin.html" >로그인</a>
       </span>
-      <nav id="menu">
-        <ul id="menu_ul">
-          <li class="menu_li"><a href="#"> 01 추천여행코스 </a></li>
-          <li class="menu_li">
-            <a href="places_main.html"> 02 인기여행지 </a>
-          </li>
-          <li class="menu_li"><a href="#"> 03 자유게시판 </a></li>
-          <li class="menu_li"><a href="#"> 04 공지사항 </a></li>
-          <li class="menu_li"><a href="../mypage/mypage.html"> 05 마이페이지 </a></li>
-        </ul>
+  </header>
+  <aside>
+      <div class="btn1" id="btn1">
+          <span class="fas fa-bars"></span>
+      </div>
+      <nav class="sidebar">
+          <!-- <div class="text"> 메뉴 </div> -->
+          <ul>
+              <li><a href="../../html/main.html"><i class="fas fa-home" aria-hidden="true"></i> 홈</a></li>                </li>
+              <li><a href="#"><i class="fa fa-map-signs" aria-hidden="true"></i> 추천여행코스</a></li>
+              <li><a href="../../html/places_main.html"><i class="fa fa-map-marked" aria-hidden="true"></i> 인기여행지</a></li>
+              <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> 자유게시판 </a></li>
+              <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> 마이페이지 </a></li>
+          </ul>
       </nav>
-    </header>
+      <script>
+          $('.btn1').click(function () {
+              $(this).toggleClass("click");
+              $('.sidebar').toggleClass("show");
+          });
+      </script>
+  </aside>
     <main>
       <div class="add-form">
         <form>
@@ -38,7 +49,7 @@
             <input class="button" type="reset" value="초기화" />
           </div>
           <div class="add-information">
-            <input class="information" type="text" placeholder="제목" />
+            <input class="information" type="text" placeholder="제목" size="35" />
             <input class="information information-date" type="date" />
             <span>-</span>
             <input class="information" type="date" />
@@ -46,12 +57,12 @@
             <span>당일</span>
           </div>
           <div class="add-detail">
-            <span>세부정보</span>
+            <span><strong>세부정보</strong></span>
             <div class="add-detail__diary">
                 <div class="add-diary__days"><p>Day1</p></div>
                     <div class="add-diary__circle">
                          <div class="circle"></div>
-                         <p>+(더블 클릭)</p>
+                         <p>+</p>
                     </div>
                     <div class="add-diary__circle">
                         <div class="circle"></div>
@@ -69,7 +80,7 @@
         </form>
       </div>
       <ul class="side-bar long">
-        <li><a href="#"> 마이페이지</a></li>
+        <li><a href="#"> 일정계획</a></li>
         <li><a href="#"> 스크랩</a></li>
         <li><a href="../mypage-setting/setting.html"> 환경설정</a></li>
       </ul>

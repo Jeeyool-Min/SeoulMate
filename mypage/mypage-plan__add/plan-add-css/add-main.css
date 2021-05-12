@@ -1,30 +1,53 @@
 main {
-  width: 1080px;
+  width: 884px;
   margin: auto;
+}
+input{
+  font-family: 'kopubdotum';
+  transform: rotate(-0.03deg);
 }
 
 .add-form {
   margin: 50px auto;
-  width: 1000px;
+  width: 884px;
 }
 
 .add-button {
-  width: 1000px;
+  width: 884px;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
   padding-bottom: 20px;
 }
 
-.button {
+/* .button {
   font-size: 20px;
   margin-right: 20px;
   padding: 0px 20px;
   border: 0.5px solid rgba(0, 0, 0, 0.5);
   font-weight: 600;
   color: rgba(0, 0, 0, 0.5);
+  
+} */
+.button{
+  color: black;
+  padding-top: 2px;
+  display: inline-block;
+  background-color:  rgb(255,248,243);
+  border: 2px solid rgb(255,248,243);
+  box-shadow: 1px 1px 0px 0.5px rgba(0, 0, 0, 0.25);
+  transform: rotate(-0.03deg);
+  cursor: pointer;
+  text-align: center;
+  margin-top: 5px;
+  width:80px;
+  height:21px;
+  box-sizing: border-box;
+  align-items: flex-end;
+  font-size: 12px;
 }
 
 .button:hover {
   color: #f2f2f2 !important;
+  border: 2px solid rgb(148, 127, 116);
   background: rgb(148, 127, 116) !important;
 }
 

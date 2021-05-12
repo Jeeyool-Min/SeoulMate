@@ -31,6 +31,7 @@
     top:55px;
     background: rgb(255,248,243);
     transition: left 0.4s ease;
+    z-index: 1;
 }
 
 .sidebar.show {

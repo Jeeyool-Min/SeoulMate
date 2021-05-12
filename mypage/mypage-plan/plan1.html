@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="plan-css/plan.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>마이페이지 | 일정계획</title>
+  </head>
+  <body>
+    <header class="subpage">
+        <div class="home detail_home">
+            <a class="seoulMate" href='../../html/main.html'><img class="seoulMate" src="../image/SeoulMate2.png"></a>
+        </div>
+        <span class="top_button detail_top_button">
+            <a id="join" href="#">회원가입</a>
+            <a id="login" href="#">로그인</a>
+        </span>
+    </header>
+    <aside>
+        <div class="btn1" id="btn1">
+            <span class="fas fa-bars"></span>
+        </div>
+        <nav class="sidebar">
+            <!-- <div class="text"> 메뉴 </div> -->
+            <ul>
+                <li><a href="../../html/main.html"><i class="fas fa-home" aria-hidden="true"></i> 홈</a></li>                </li>
+                <li><a href="#"><i class="fa fa-map-signs" aria-hidden="true"></i> 추천여행코스</a></li>
+                <li><a href="../../html/places_main.html"><i class="fa fa-map-marked" aria-hidden="true"></i> 인기여행지</a></li>
+                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> 자유게시판 </a></li>
+                <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> 마이페이지 </a></li>
+            </ul>
+        </nav>
+        <script>
+            $('.btn1').click(function () {
+                $(this).toggleClass("click");
+                $('.sidebar').toggleClass("show");
+            });
+        </script>
+    </aside>
+
+    <main>
+      <div class="plan-content">
+        <div class="plan-title">
+          <p>맛집투어 [21.04.20] with 김지윤</p>
+        </div>
+        <div class="plan-diary">
+          <div class="plan-diary__days"><p>Day1</p></div>
+          <div class="plan-diary__images first">
+            <div class="plan-diary__image">
+              <img src="../image/한강.jpg" width="100px" height="100px" />
+              <p>한강</p>
+            </div>
+            <div class="plan-diary__memo plan-diary__memo-up">
+              <p>배고플 때까지 걸어다니기</p>
+            </div>
+          </div>
+          <div class="plan-diary__images">
+            <div class="plan-diary__image">
+              <img src="../image/음식1.jpg" width="100px" height="100px" />
+              <p>팟타이</p>
+            </div>
+            <div class="plan-diary__memo plan-diary__memo-down">
+              <p>
+                12:30쯤에 밥 먹으러 출발~~~ <br />
+                1시간 정도 먹은 후 카페 ㅎㅎㅎ
+              </p>
+            </div>
+          </div>
+          <div class="plan-diary__images">
+            <div class="plan-diary__image">
+              <img src="../image/카페1.jpg" width="100px" height="100px" />
+              <p>후식</p>
+            </div>
+            <div class="plan-diary__memo plan-diary__memo-up">
+              <p>뭐 시킬지 고민~~</p>
+            </div>
+          </div>
+          <div class="plan-diary__images">
+            <div class="plan-diary__image">
+              <img src="../image/한강.jpg" width="100px" height="100px" />
+              <p>한강</p>
+            </div>
+            <div class="plan-diary__memo plan-diary__memo-down">
+              <p>걸어다니기</p>
+            </div>
+          </div>
+        </div>
+    </div>
+      <ul class="side-bar long">
+        <li><a href="#"> 일정계획</a></li>
+        <li><a href="#"> 스크랩</a></li>
+        <li><a href="../mypage-setting/setting.html"> 환경설정</a></li>
+      </ul>
+    </main>
+    <footer>
+      <p>
+        &copy; 서울여행길잡이 SeoulMate <br />
+        이메일 : team1_ezen21@google.com
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+main {
+  width: 900px;
+  margin: auto;
+}
+
+.plan-title {
+  margin-top: 20px;
+  text-align: center;
+
+  border-bottom: 1px solid black;
+}
+
+.plan-title p {
+  font-weight: bold;
+}
+
+.plan-diary {
+  width: 1000px;
+  margin: auto;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.plan-diary__days {
+  margin-right: 40px;
+}
+
+.plan-diary__days p {
+  font-weight: 800;
+  margin-left: 20px;
+}
+
+.plan-diary__images {
+  margin-left: 30px;
+  position: relative;
+}
+
+.plan-diary__images img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.plan-diary__image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plan-diary__image p {
+  position: absolute;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.plan-diary__memo-up {
+  position: absolute;
+  top: -50px;
+  width: 300px;
+}
+
+.plan-diary__memo-down {
+  position: absolute;
+  bottom: -50px;
+  width: 300px;
+}
+
+.plan-diary__memo p {
+  font-size: 11px;
+  font-weight: 800;
+}

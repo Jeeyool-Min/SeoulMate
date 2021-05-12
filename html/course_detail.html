@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title> 서울여행 길잡이 SeoulMate </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/common.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/place.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/course/course_detail.css'>
+    <script src='main.js'></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <header class="subpage">
+        <div class="home detail_home">
+            <a class="seoulMate" href='main.html'><img class="seoulMate" src="../image/SeoulMate2.png"></a>
+        </div>
+        <span class="top_button detail_top_button">
+            <a id = "join" href="Signup.html" >회원가입</a>
+            <a id = "login" href="Signin.html" >로그인</a>
+        </span>
+    </header>
+    <aside>
+        <div class="btn1" id="btn1">
+            <span class="fas fa-bars"></span>
+        </div>
+        <nav class="sidebar">
+            <!-- <div class="text"> 메뉴 </div> -->
+            <ul>
+                <li><a href="main.html"><i class="fas fa-home" aria-hidden="true"></i> 홈</a></li>                </li>
+                <li><a href="#"><i class="fa fa-map-signs" aria-hidden="true"></i> 추천여행코스</a></li>
+                <li><a href="places_main.html"><i class="fa fa-map-marked" aria-hidden="true"></i> 인기여행지</a></li>
+                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> 자유게시판 </a></li>
+                <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> 마이페이지 </a></li>
+            </ul>
+        </nav>
+        <script>
+            $('.btn1').click(function () {
+                $(this).toggleClass("click");
+                $('.sidebar').toggleClass("show");
+            });
+        </script>
+    </aside>
+    <main>
+        <div class="titleType1">
+            <div class="tit">
+                <h2><em class="tit_cos">1코스</em>압구정 투어</h2>
+            </div>
+            <div class="area_address">
+                <span class="address">서울시 강남구 압구정동</span>
+                <span id="dist">코스 총거리 : 86.4km</span>
+            </div>
+            <div class="post_area">
+                <button type="button" class="btn_good" onclick="likeSave();"><span class="ico">좋아요</span><span
+                        class="num" id="conLike">1</span></button>
+                <button type="button" class="btn_sharing" onclick="openShare2();"><span class="ico">공유하기</span><span
+                        class="num" id="conShare">5</span></button>
+                <span class="num_view"><em class="tit">조회수</em><span class="num" id="conRead">195</span></span>
+                <span class="rline">
+                    <button type="button" class="btn_print" onclick="openPrint();" title="새창 열림"><span class="ico"
+                            title="새창 열림">인쇄하기</span></button>
+                    <button type="button" class="btn_cos" onclick="myCourseCartDetail('C','250','');"><span
+                            class="ico">코스 담기</span></button>
+                </span>
+            </div>
+        </div>
+        <div class="course_detail">
+            <div class="schedule_info">
+                <ul class="schedule">
+                    <li> <span class="img"><img src="../image/schedule.gif" alt=""></span> <em>일정</em>
+                        <strong>당일여행</strong>
+                    </li>
+                    <li> <span class="img"><img src="../image/theme.gif" alt=""></span> <em>테마</em> <strong>친구코스</strong>
+                    </li>
+                </ul>
+            </div>
+            <div class="wrap_contView">
+                <div class="area_txtView top" style="padding-bottom: 0px;">
+                    <div class="inr_wrap" style="overflow: visible; height: auto;">
+                        <div class="inr">
+                            <p>서울 압구정 투어 당일 코스로 즐기기<br>요즘 핫한 압구정에서 즐거움을 만끽하세요 ~!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relation_cos">
+                <div class="cos_wrap">
+                    <div class="pc js_slider">
+                        <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                            <ul class="swiper-wrapper cosList">
+                                <li class="swiper-slide on1 swiper-slide-active"> <em>1<span>코스</span></em> <a
+                                        href="#cosTab01"> <span class="img"
+                                            style="background:url(https://th.bing.com/th/id/R4e70100e5871736071b9788927d373e7?rik=hBMLBRma6cSmUg&riu=http%3a%2f%2fblogthumb2.naver.net%2f20160221_144%2fanniekm9_14560638325109Xr5I_JPEG%2f20160218_130943.jpg%3ftype%3dw2&ehk=OmDOp8cYXXtIbq%2bmcmHywHtoFbnLnHWXOYVw%2b9wP%2fkM%3d&risl=&pid=ImgRaw) 50% 50% / cover no-repeat;"></span>
+                                        <div class="tit"><span>도산공원 카페거리</span></div>
+                                    </a></li>
+                                <li class="swiper-slide swiper-slide-next"> <em>2<span>코스</span></em> <a
+                                        href="#cosTab02"> <span class="img"
+                                            style="background:url(https://th.bing.com/th/id/R209e519bf9b97986d6f1038db25ec5ad?rik=EhDCt%2fDWnk3juw&riu=http%3a%2f%2fcfile23.uf.tistory.com%2fimage%2f235D53345272DAD8186CBF&ehk=pQAZ2tebgTUv%2fi7wyTootqqBeR4Q%2bIyE7TIjgvJrTzM%3d&risl=&pid=ImgRaw) 50% 50% / cover no-repeat;"></span>
+                                        <div class="tit"><span>가로수길</span></div>
+                                    </a></li>
+                                <li class="swiper-slide"> <em>3<span>코스</span></em> <a href="#cosTab03"> <span
+                                            class="img"
+                                            style="background:url(https://i.pinimg.com/originals/52/50/de/5250de5c9cb266ae481c64acefd0f680.jpg) 50% 50% / cover no-repeat;"></span>
+                                        <div class="tit"><span>한강공원 잠원지구</span></div>
+                                    </a></li>
+                            </ul>
+                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                                aria-disabled="false"></div>
+                            <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button"
+                                aria-label="Previous slide" aria-disabled="true"></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tab cont -->
+                <div id="tabCont">
+                    <div class="cos_cont active" id="cosTab01">
+                        <div class="detail_box">
+                            <div class="title">
+                                <div class="tit_wrap"> <em>1</em> <strong><a
+                                            href="#">도산공원 카페거리</a></strong>
+                                </div> <span>서울특별시 강남구 신사동 도산대로45길 20</span><span>  </span>
+                            </div>
+                            <div class="info_area pc">
+                                <div class="wrap">
+                                    <div><a href="#"
+                                            style="background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSQ5p_qFlaF-NH8zbAhhOpeKtNWFn0I4oufA&usqp=CAU) 50% 50% / cover no-repeat;">도산공원
+                                            0</a></div>
+                                    <div><a href="#"
+                                            style="background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRCMrzmKoRanBE1U0RoRUcVY0kUNaQk5zBVw&usqp=CAU) 50% 50% / cover no-repeat;">펠트 도산 카페
+                                            1</a></div>
+                                    <div><a href="#"
+                                            style="background:url(https://emmaru.com/matzip/include/pics/2020/03/22/m_55514B154721_1.jpg) 50% 50% / cover no-repeat;">클랩 피자
+                                            2</a></div>
+                                </div>
+                            </div>
+                            
+                            <ul class="tag">
+                                <li><a
+                                        href="javascript:goTagList('12','핫플레이스','3f36ca4b-6f45-45cb-9042-265c96a4868c');">#핫플레이스</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','도산공원','7aee2c79-31d9-45bf-a4f3-6b439c508508');">#도산공원</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','카페','698762dd-9958-11e9-9488-02001c6b0001');">#카페</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','SNS','24e11c8c-d110-11e8-932f-02001c6b0001');">#SNS</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','펠트도산','3e04cc9c-d1cc-11e8-932f-02001c6b0001');">#펠트도산</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','클랩피자','c24d515f-3202-45e5-834e-1a091901aeff');">#클랩피자</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','맛집','1a0be97f-17fd-4469-9b37-04b3d1691912');">#맛집</a>
+                                </li>                                
+                            </ul>
+                            <div class="recommend" id="603ec57c-24c6-4a7a-b658-bb9627316a7c">
+                                <div class="pc">
+                                    <div class="wrap"> <strong>도산공원</strong> <em>핫플레이스</em>
+                                        <ul class="tag_list">
+                                            <li><a href="#">목록1</a></li>
+                                            <li><a href="#">목록2</a></li>
+                                            <li><a href="#">목록3</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cos_cont" id="cosTab02">
+                        <div class="detail_box">
+                            <div class="title">
+                                <div class="tit_wrap"> <em>2</em> <strong><a
+                                            href="/detail/detail_view.do?cotid=982ea676-de79-401f-b5d7-803ba6b34e55">속동전망대</a></strong>
+                                </div> <span>충청남도 홍성군 서부면 남당항로 689</span><span>내 위치에서 13169.1km</span>
+                            </div>
+                            <div class="info_area pc">
+                                <div class="wrap">
+                                    <div><a href="/detail/detail_view.do?cotid=982ea676-de79-401f-b5d7-803ba6b34e55"
+                                            style="background:url(https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=db9df48b-39de-4569-9020-4d451ff4017f) 50% 50% / cover no-repeat;">속동전망대
+                                            0</a></div>
+                                    <div><a href="/detail/detail_view.do?cotid=982ea676-de79-401f-b5d7-803ba6b34e55"
+                                            style="background:url(https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=ee40c112-524f-41db-96f1-91bf081cbe91) 50% 50% / cover no-repeat;">속동전망대
+                                            1</a></div>
+                                    <div><a href="/detail/detail_view.do?cotid=982ea676-de79-401f-b5d7-803ba6b34e55"
+                                            style="background:url(https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=be30018f-9ce4-4abc-bca2-aa91fc6168d8) 50% 50% / cover no-repeat;">속동전망대
+                                            2</a></div>
+                                </div>
+                            </div>
+                            
+                            <ul class="tag">
+                                <li><a
+                                        href="javascript:goTagList('12','갯벌','51f4e27c-7c9b-4a74-b622-552fd4cca296');">#갯벌</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','경치좋은곳','2064b514-a9ac-49fd-8540-1c3da940faa7');">#경치좋은곳</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','관광지','3f36ca4b-6f45-45cb-9042-265c96a4868c');">#관광지</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','데이트코스','e0668d10-894b-46f5-ac78-6013068efcf8');">#데이트코스</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','바다경치','698762dd-9958-11e9-9488-02001c6b0001');">#바다경치</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','바다전망','8010b000-04be-479b-b4be-b75052fc9528');">#바다전망</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','바다전망대','03fcad50-bc7f-11e8-932f-02001c6b0001');">#바다전망대</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','사진찍기좋은곳','780a3e95-b4b0-11e8-b248-02001c6b0001');">#사진찍기좋은곳</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','사진촬영','119833e7-833e-11e9-9488-02001c6b0001');">#사진촬영</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','속동갯벌','56528786-bca3-11e8-932f-02001c6b0001');">#속동갯벌</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','연인과함께','692daa17-b21e-4d91-84b7-80130e0765d6');">#연인과함께</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','자연좋은곳','1a0be97f-17fd-4469-9b37-04b3d1691912');">#자연좋은곳</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','자연환경','023daa03-4e02-4e37-b433-886c54f529a8');">#자연환경</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','전망대','3e5dca68-dd28-45d9-814d-36a6a57429df');">#전망대</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','커플데이트','07e45e70-e2f3-11e8-9488-02001c6b0001');">#커플데이트</a>
+                                </li>
+                            </ul>
+                            <div class="recommend" id="982ea676-de79-401f-b5d7-803ba6b34e55">
+                                <div class="pc">
+                                    <div class="wrap"> <strong>속동전망대</strong> <em>인근 여행지</em>
+                                        <ul class="tag_list">
+                                            <li><a
+                                                    href="/detail/detail_view.do?cotid=a9611a40-d7d8-4b54-aed2-f29eee9f2057">홍성
+                                                    속동갯벌마을</a></li>
+                                            <li><a
+                                                    href="/detail/detail_view.do?cotid=ad91feb1-3a1d-48e5-b3af-8a6440d4b034">홍성군
+                                                    승마체험장</a></li>
+                                            <li><a
+                                                    href="/detail/detail_view.do?cotid=167d417b-3cf8-45b3-ab49-179b7f506c9e">천수만한울마루
+                                                    해상낚시공원</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cos_cont" id="cosTab03">
+                        <div class="detail_box">
+                            <div class="title">
+                                <div class="tit_wrap"> <em>3</em> <strong><a
+                                            href="/detail/detail_view.do?cotid=c81dd9ba-de78-4aaa-bcb2-9b25e9180564">남당항</a></strong>
+                                </div> <span>충청남도 홍성군 서부면 남당리</span><span>내 위치에서 13171.4km</span>
+                            </div>
+                            <div class="info_area pc">
+                                <div class="wrap">
+                                    <div><a href="/detail/detail_view.do?cotid=c81dd9ba-de78-4aaa-bcb2-9b25e9180564"
+                                            style="background:url(https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=c9cd3b87-746f-4673-9a27-e9e39ca48ce5) 50% 50% / cover no-repeat;">남당항
+                                            0</a></div>
+                                    <div><a href="/detail/detail_view.do?cotid=c81dd9ba-de78-4aaa-bcb2-9b25e9180564"
+                                            style="background:url(https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=75062369-cfb9-4a75-8fef-b8ba1c2997f6) 50% 50% / cover no-repeat;">남당항
+                                            1</a></div>
+                                    <div><a href="/detail/detail_view.do?cotid=c81dd9ba-de78-4aaa-bcb2-9b25e9180564"
+                                            style="background:url(https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=bf2df928-1530-4b77-9757-458bb31c645e) 50% 50% / cover no-repeat;">남당항
+                                            2</a></div>
+                                </div>
+                            </div>
+                            
+                            <ul class="tag">
+                                <li><a
+                                        href="javascript:goTagList('12','가족과함께','423a9351-bb43-45b8-97d9-2ca01b96bd10');">#가족과함께</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','관광지','3f36ca4b-6f45-45cb-9042-265c96a4868c');">#관광지</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','남당항','77ddfa49-11a2-4b6b-8f77-2c0e04208660');">#남당항</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','대하','2ce66c9d-4593-4788-89cd-3ca0947e1065');">#대하</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','미식여행','8b422874-c9b2-45e4-9577-fd85cd413fe4');">#미식여행</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','바다풍경','f37cde49-3177-4f00-930d-2bf9532f08e8');">#바다풍경</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','새조개','58b199aa-7b05-44c0-8557-f9733b12d255');">#새조개</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','수산물','dfd7d9f1-7adc-4c1f-b8e6-357563ec86dd');">#수산물</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','자연','c24d515f-3202-45e5-834e-1a091901aeff');">#자연</a>
+                                </li>
+                                <li><a
+                                        href="javascript:goTagList('12','충청권','80e125cc-0432-4078-a43c-a68e79ba9959');">#충청권</a>
+                                </li>
+                            </ul>
+                            <div class="recommend" id="c81dd9ba-de78-4aaa-bcb2-9b25e9180564">
+                                <div class="pc">
+                                    <div class="wrap"> <strong>남당항</strong> <em>인근 여행지</em>
+                                        <ul class="tag_list">
+                                            <li><a
+                                                    href="/detail/detail_view.do?cotid=d766e9c4-1a62-4974-9829-a339afb5f557">남당마을</a>
+                                            </li>
+                                            <li><a
+                                                    href="/detail/detail_view.do?cotid=c16ff4d0-c42d-4a9a-ba8a-08e41c7fbfd6">어사리
+                                                    노을공원</a></li>
+                                            <li><a
+                                                    href="/detail/detail_view.do?cotid=e3120232-dcb5-4f3b-b8e1-00b487bbc0c5">죽도(홍성)</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="wrap_contView">
+            <div class="mapView">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12657.064708680055!2d127.02954622668513!3d37.52522228845256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca394898ceded%3A0x6e7b0f6fa54438cd!2z6rCA66Gc7IiY6ri4!5e0!3m2!1sko!2skr!4v1620714778266!5m2!1sko!2skr" 
+                width="700" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="wrap_contView" id="detailinfoview">
+                <!-- 세부 정보 -->
+                <div class="area_txtView_bottom" style="padding-bottom: 50px;">
+                    <div class="inr_wrap" style="overflow: hidden; height: 125px;">
+                        <div class="inr">
+                            <ul>
+                                <li><strong>주소 : </strong><span>서울특별시 강남구 신사동</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="replyGo">
+                <div class="replyWrap">
+                    <h3 class="tit_reply">여행톡<span> </span></h3>
+                    <div class="write">
+                        <div class="form">
+                            <form name="tform" id="tform">
+                                <span class="writeForm"><textarea name="comment" rows="3px" cols="100px" id="comment"
+                                        placeholder="로그인 후 소중한 댓글을 남겨주세요." cols="5px"
+                                        readonly="readonly"></textarea></span>
+                                <a href="javascript:" class="btn_apply_ContentComment">로그인</a>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="wrap_reply">
+                        <p class="reply_none">등록된 댓글이 없습니다.</p>
+                    </div>
+                </div>
+            </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 서울여행길잡이 SeoulMate <br>
+            이메일 : team1_ezen21@google.com</p>
+    </footer>
+
+</body>
+
+</html>

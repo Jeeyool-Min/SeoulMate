@@ -1,0 +1,60 @@
+main {
+  margin: auto;
+  width: 1080px;
+}
+
+table {
+  margin: 20px auto;
+}
+
+.plan-table {
+  border-collapse: collapse;
+  line-height: 50px;
+}
+
+.even {
+  background: #fdf3f5;
+}
+
+.plan-table thead {
+  text-align: center;
+}
+
+.first-column {
+  width: 50px;
+  text-align: left;
+}
+
+.second-column {
+  width: 350px;
+}
+
+.third-column {
+  width: 200px;
+}
+
+.fourth-column {
+  width: 150px;
+}
+
+.fifth-cloumn {
+  width: 150px;
+}
+
+.colspan-button {
+  width: 900px;
+  text-align: center;
+}
+
+.table-title {
+  text-decoration: none;
+  color: black;
+}
+
+.plan-table button {
+  background-color: #3e3d3b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10%;
+}

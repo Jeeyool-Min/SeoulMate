@@ -17,7 +17,7 @@
                     <li class="li_course"> 풍년쌀농산 </li>
                     <li class="li_course"> 북촌 한옥마을 </li> <small>총 거리:2.4km</small>
                 </ul>
-        </div>
+       		</div>
             <div class = "preview">
                 <span class = "thumbnail_txt"> 고즈넉함 따라 걷는 부암동 문화산책 </span>
                 <div class = "thumbnail_img" style="background-image:url('https://d2uh4olaxaj5eq.cloudfront.net/fit-in/0x1018/b4d64f7a-3ed7-4160-a162-8b2839b76d68.jpg')"></div>

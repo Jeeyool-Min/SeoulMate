@@ -5,10 +5,21 @@
 <title> filter </title>
 <script src='main.js'></script>
 <link rel='stylesheet' type='text/css' media='screen' href='resources/css/common/common_filter.css'>
+<link rel='stylesheet' type='text/css' media='screen' href='resources/css/common/popup_site.css'>
 <link rel='stylesheet' type='text/css' media='screen' href='resources/css/common/common_buttonChkbox.css'>
 
+<script type="text/javascript">
+/*
+function showPopup(){
+	 if($("#districtWrap").css("display") == "none"){ $('#districtWrap').show();}
+function hidePopup(){$('#districtWrap').hide();}*/
+
+function popup(){
+	gu = window.open("popup_area.jsp", "choose_area","width=940, height=500, resizable, status=1");
+}
+</script>
 </head>
-<body>
+<body class="popup_body">
 	<div class="filterOutWrap">
     <form name="schInfo" id="schInfo" style="display: block;" method="POST">
         <h2 class="tit_sch"> <b>맞춤형</b> 여행정보 찾기</h2>
@@ -19,7 +30,7 @@
                     <div class="tripSite">
                     <input type="text" id="destination" placeholder="여행지 선택" readonly="">
                     <!--onclick은 자바스크립트-->
-                    <button type="button" id="dstBtn" class="btn schBtn" onclick="SitePopup.layerShow('area','areaBtn');"><span class="web_only">여행지 </span>선택</button></div>
+                    <button type="button" id="dstBtn" class="btn schBtn" onclick="popup()"><span class="web_only">여행지 </span>선택</button></div>
                 </li>
                     <!--지역선택은은 하나의 input태그와 연결되므로 label-input으로 묶음-->
                 <li class="line2"><span class="title"><label> 여행목적 </label></span>
@@ -77,5 +88,6 @@
         </div>
     </form>
     </div>
+    <include file="popup_area.jsp">
 </body>
 </html>

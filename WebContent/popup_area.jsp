@@ -11,7 +11,8 @@
 <div id="districtWrap" class="wrap_pop" style="display:block; position:absolute;">
     <div id="districtPop" class="pop" style="position:absolute; left:50%; top:100.286px;">
         <div class="tit"> <h2> <b> 여행지 </b> 선택</h2>
-            <button type="button" class="btn_close1" onclick="MainTabPopup.layerHide('spArea')";> 닫기 </button></div>
+            <button type="button" class="btn_close1" onclick="close()";> 닫기 </button></div>
+           <!--<button type="button" class="btn_close1" onclick="hidePopup('spArea')";> 닫기 </button></div>-->
         <div id="districtBox" class="choice">
             <ul>
             <!-- <li class="top_move" style="user-select: auto;"><button type="button" class="c_btn" onclick="moveUp('11680')" style="user-select: auto;">서울 전체</button></li> -->
@@ -41,6 +42,8 @@
             <li id="gu23"><button id="btn_gu23" onclick="setGuNm('23')" type="button" value="종로구" class="c_btn">종로구</button></li>
             <li id="gu24"><button id="btn_gu24" onclick="setGuNm('24')" type="button" value="중구" class="c_btn">중구</button></li>
             <li id="gu25"><button id="btn_gu25" onclick="setGuNm('25')" type="button" value="중랑구" class="c_btn">중랑구</button></li></ul>
-</div></div>
+	</div>
+</div>
+</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
-<!DOCTYPE html">
+<!DOCTYPE html>
 <html>
 <head>
 <title>쓰기 모드에서 filter</title>
@@ -51,14 +51,12 @@
             </li>
             <li><span class="title"><label for="tripKeyword"> 추가 키워드 </label></span>
                     <div class="tripKeyword" style="display: inline-block;">
-                        <input type="text" id="tripKeyword" placeholder="찾으시는 키워드가 없나요? 직접 입력해보세요.">
+                        <input type="text" name="tripKeyword" id="tripKeyword" placeholder="찾으시는 키워드가 없나요? 직접 입력해보세요.">
                     </div>
                 </li>
                 <button class="btn resetBtn" id="resetBtn1" type="reset"> 선택모두해제 </button>
             </ul>
             </div>
         </div>
-
-
 </body>
 </html>

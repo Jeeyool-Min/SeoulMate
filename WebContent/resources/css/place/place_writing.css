@@ -140,7 +140,7 @@ li #placeTime{ width:175px;}
     cursor:pointer;
 }
 .chkbox_ul .tripSite > #destination { width:365px;}
-.chkbox_ul .tripKeyword > #tripKeyword { width:277px;}
+.chkbox_ul .tripKeyword > #tripKeyword { width:277px; transform: translateY(5px);}
 .unfoldBtn:checked ~ .chkbox_ul{
     width:500px; padding-top:20px; display: inline-block;
 }

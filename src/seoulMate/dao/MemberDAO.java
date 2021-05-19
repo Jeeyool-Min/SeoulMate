@@ -8,8 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.xml.ws.Response;
-
 import seoulMate.dto.MemberDTO;
 
 //데이터베이스랑 연결하기, SQL문 보내고 받기

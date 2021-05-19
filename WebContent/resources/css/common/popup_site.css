@@ -4,7 +4,7 @@ body{width:1280px; height:500px; position: absolute;}
 .pop{position: absolute; z-index: 110; background: #fff; color: #3B3838;}
 #districtPop{ margin-left: -440px !important; padding: 25px 30px;  width: 880px; height: 300px; border-radius: 20px; position: relative;}
 .tit{ width:820px; padding-left:40px; padding-right: 40px;}
-.pop .tit h2{ font-size:24px; font-family: 'kopubdotum'; font-weight: 300; display: inline;}
+.pop .tit h2{ font-size:24px; font-family: 'Kopub Dotum'; font-weight: 300; display: inline;}
 .pop .tit h2 b{font-weight: 700;}
 .tit .btn_close1{ overflow:hidden; text-indent:-9999px;
     position:absolute; top:0; right:40px; border:0 none; cursor: pointer; }

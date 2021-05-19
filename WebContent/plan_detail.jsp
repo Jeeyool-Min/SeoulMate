@@ -6,6 +6,7 @@
     <title> 일정계획 | 읽기모드 </title>
     <link rel="stylesheet" href="mypage/css/plan-detail.css" />
     <link rel='stylesheet' type='text/css' media='screen' href='resources/css/common.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='resources/css/mypage/plan-detail.css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <script src="resources/js/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>

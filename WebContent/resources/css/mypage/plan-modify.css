@@ -1,5 +1,5 @@
 .plan-title button {
-  font-family: 'KoPubDotum';
+  font-family: 'KoPub Dotum';
   cursor: pointer;
   background: rgb(148,127,116);
   color:white;
@@ -21,7 +21,7 @@
 }
 
 input[type="date" i]{
-  font-family: 'KoPubDotum';
+  font-family: 'KoPub Dotum';
   width:130px;
   font-size: 12px;
   padding-left:5px;

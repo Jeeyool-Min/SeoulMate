@@ -5,7 +5,6 @@
 <title> HOME </title>
 <link rel='stylesheet' type='text/css' media='screen' href='resources/css/common.css'>
 <link rel='stylesheet' type='text/css' media='screen' href='resources/css/main/main_content.css'>
-<link rel='stylesheet' type='text/css' media='screen' href='resources/css/place.css'>
 </head>
 <body>
 	<%@ include file="header1.jsp" %>

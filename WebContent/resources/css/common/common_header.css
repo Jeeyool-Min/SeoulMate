@@ -1,24 +1,24 @@
 @import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
 @import url(http://cdn.jsdelivr.net/npm/font-kopub@1.0/kopubdotum.min.css);
 
+/*콘텐트의 양이 적어도 푸터를 하단에 고정 - plan_main*/
+html, body{ margin:0; padding:0; height:100%;}
+.whole_wrapper{display:flex; flex-direction:column; height:100%;}
+.main_content{flex:1; top:120px;}
+
 ul{list-style: none;}
-header{
-    height: 120px;
-}
-.header2{
-	height:auto;
-}
-header.subpage{
-    height:50px;
-}
-body{
-    margin: 0;
-}
+header{height: 120px;}
+.header2{height:auto;}
+header.subpage{height:50px;}
+body{margin: 0;}
+
+/*글씨체 부드럽게 출력*/
+label, div p, article a, td, thead, td a, main div p, .area_subtitle, input, footer p, main a, main li, nav a
+{transform: rotate(-0.03deg);}
+
 main{
     padding-top:20px;
     padding-bottom: 100px;
-    /* border: #3B3838 1px solid; */
-    /* background-color: rgb(255, 241, 241); */
     margin:auto;
     width:884px;
     position: relative;
@@ -28,9 +28,7 @@ main{
 	position:relative;
 	top:100px;
 }
-h1,h2,h3,h4,body{
-    font-family: 'KoPubDotum';
-}
+h1,h2,h3,h4,body{font-family: 'KoPub Dotum';}
 
 a:-webkit-any-link { /*留곹겕 諛묒쨪 �궘�젣*/
     color: black ;
@@ -69,7 +67,7 @@ a:-webkit-any-link { /*留곹겕 諛묒쨪 �궘�젣*/
 .detail_top_button{ top:15px; }
 .top_button #join, #login{
     transform: rotate(-0.03deg);
-    font-family: 'KoPubBatang';
+    font-family: 'KoPub Batang';
     font-size: 12px;
     font-weight: 300;
     display: inline-block;
@@ -83,7 +81,7 @@ a:-webkit-any-link { /*留곹겕 諛묒쨪 �궘�젣*/
 #menu li {
     list-style: none;
     width:auto;
-    font-family: 'KoPubBatang';
+    font-family: 'KoPub Batang';
     display: inline-block;
 }
 #menu ul{
@@ -118,7 +116,7 @@ footer{
     position: relative;
     background: rgb(248, 248, 248);
     /*padding-left: 100px;*/
-    font-family: 'KoPubBatang';
+    font-family: 'KoPub Batang';
     font-weight: 300;
     -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3);
     margin-top:50px;
@@ -128,6 +126,7 @@ footer{
 }
 
 footer p{		
+	margin:0;
     font-size: 12px;
     display: block;
     text-align:center;

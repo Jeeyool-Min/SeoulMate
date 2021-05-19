@@ -1,5 +1,5 @@
 button{
-    font-family: 'KoPubDotum';
+    font-family: 'KoPub Dotum';
     background: rgb(148,127,116);
     /* background-color:  rgb(255,248,243); */
     color:white;
@@ -13,7 +13,7 @@ button{
 }
 
 input[type="text" i]{
-    font-family: 'KoPubDotum';
+    font-family: 'KoPub Dotum';
     width:300px;
     font-size: 12px;
     padding-left:5px;
@@ -21,7 +21,7 @@ input[type="text" i]{
     height: 20px;
 }
 input[type="date" i]{
-    font-family: 'KoPubDotum';
+    font-family: 'KoPub Dotum';
     width:130px;
     font-size: 12px;
     padding-left:5px;
@@ -30,7 +30,7 @@ input[type="date" i]{
 }
 input[type="submit" i], input[type="reset" i]{
     width:95px;
-    font-family: 'KoPubDotum';
+    font-family: 'KoPub Dotum';
     font-size: 12px;
     background: #3B3838;
     background: rgb(148,127,116);

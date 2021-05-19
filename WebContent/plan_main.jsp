@@ -18,8 +18,9 @@
 </script>
 </head>
 <body>
+<div class ="whole_wrapper">
 	<%@ include file="header1.jsp" %>
-<main>
+<main class="main_content">
 <table class="plan-table">
         <thead>
           <tr class="tr-border">
@@ -119,5 +120,6 @@
     <%@ include file="mypage_sidebutton.jsp"%>
     </main>
 	<%@ include file="footer.jsp" %>
+</div>
 </body>
 </html>

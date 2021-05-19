@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <title> 일정계획 | 쓰기(수정)모드 </title>
-    <link rel="stylesheet" href="resources/css/mypage/plan-main.css" />
+    <link rel="stylesheet" href="resources/css/mypage/plan-detail.css" />
     <link rel="stylesheet" href="resources/css/mypage/plan-modify.css" />
     <link rel='stylesheet' type='text/css' media='screen' href='resources/css/common.css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">

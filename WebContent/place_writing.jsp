@@ -30,9 +30,9 @@
         </div>
         <div class="basicInfo">
         <ul>
-            <li><label for="placeName">장소명*</label><input type="text" id="placeName" name="pName" size="5"></li>
-            <li><label for="placeSubtitle">부제</label><input type="text" id="placeSubtitle" name="pSubtitle" size="10"></li>
-            <li><label for="placeCategory">장소분류*</label><select id="placeCategory" name="pCategory">
+            <li><label for="placeName">장소명*</label><input type="text" id="placeName" name="pName" size="5" autofocus required maxlength="15"></li>
+            <li><label for="placeSubtitle">부제*</label><input type="text" id="placeSubtitle" name="pSubtitle" size="10" required maxlength="20"></li>
+            <li><label for="placeCategory">장소분류*</label><select id="placeCategory" name="pCategory" required>
                 <option value="store"> 상점 </option>
                 <option value="shopping"> 쇼핑몰 </option>
                 <option value="culture"> 문화시설 </option>
@@ -44,10 +44,10 @@
                 <option value="activity"> 이색체험공간 </option>
                 <option value="etc"> 기타 </option>
             </select></li>            
-            <li><label for="placeFee">이용요금</label><input type="text" id="placeFee" name="pFee" size="10"></li>
+            <li><label for="placeFee">이용요금</label><input type="text" id="placeFee" name="pFee" size="10" maxlength="50"></li>
             <li class="placeAccess"><label for="placeOff">휴무일 *</label><input type="text" id="placeOff" name="pOff" placeholder="월,수" size="4"></li>
-            <li class="placeAccess"><label for= "placeTime">이용시간</label><input type="text" id="placeTime" name="pTime" placeholder="12:00~19:00" size="4"></li>
-                <li class="line3"><label for="placeAddress">주소 *</label><input type="text" id="placeAddress" name="pAddress" size="10">
+            <li class="placeAccess"><label for= "placeTime">이용시간</label><input type="text" id="placeTime" name="pTime" placeholder="12:00~19:00" maxlength="30" size="4"></li>
+                <li class="line3"><label for="placeAddress">주소 *</label><input type="text" id="placeAddress" name="pAddress" size="10" maxlength="40" required>
                 <button type="button" class="btn addSchBtn" onclick="findAddress.kakaoShow();">주소 검색</button></li>
         </ul>
         </div>
@@ -57,7 +57,7 @@
         <jsp:include page="filter_writing.jsp"/>
         </div>
         <!-- 여행지 설명란 및 등록버튼 -->
-        <textarea name="pInfo" cols="115" rows="5" placeholder="여행지를 자세히 소개하세요 (선택사항)"></textarea>
+        <textarea name="pInfo" cols="115" rows="5" placeholder="여행지를 자세히 소개하세요 (선택사항)" maxlength="400"></textarea>
         <button type="submit" class="btn submitBtn" name="등록"> 등록 </button>
     </form>
     </article>

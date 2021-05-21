@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
 import seoulMate.dto.PlaceDTO;
 
@@ -20,32 +19,42 @@ public class PlaceDAO {
 	
 	public PlaceDAO() {
 		try {Class.forName(driver);
-		}catch(ClassNotFoundException e) {e.printStackTrace();}
+		} catch(ClassNotFoundException e) {e.printStackTrace();}
 	}
 	
-	public void submit() { 
+	public String submit() { 
 		PlaceDTO dto = PlaceDTO.getInstance();
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String result="오류없음";
 		
 		try {
 			/*place_post: 글번호, 부제, 닉네임, 작성일, 좋아요, 조회수, 장소설명*/
-			ArrayList<PlaceDTO> list = new ArrayList<PlaceDTO>();
+//			ArrayList<PlaceDTO> list = new ArrayList<PlaceDTO>();
+			System.out.println("닉네임 : "+dto.getNickname());
 			con = DriverManager.getConnection(url, userid, passwd);
 			String query = "insert into place_post(pno, ptitle, nickname, pwrittenDate, plikeno, pinfo, pview)"
 							+ " values(pno_seq.nextval, ?, ?, sysdate, 0, ?, 0)"; //쿼리문 생성
 			
 			pstmt = con.prepareStatement(query);
-			pstmt.setString(2, dto.getPtitle());
-			pstmt.setString(6, dto.getPinfo());
+			pstmt.setString(1, dto.getPtitle());
+			pstmt.setString(2, dto.getNickname());
+			pstmt.setString(3, dto.getPinfo());
 			pstmt.executeUpdate();
+			System.out.println("place_post 성공");
 			
 			/*pno알아오기:해당 닉네임에 의해 데이터베이스에 들어간 정보 최근순으로 가져오기*/
-			ResultSet rs = null;
 			query = "select pno from (select pno from place_post where nickname='" + dto.getNickname() + "' order by pwrittenDate desc) where rownum=1";
 			pstmt = con.prepareStatement(query);
 			rs = pstmt.executeQuery();
-			int pno = rs.getInt("pno");
+			System.out.println("반복문 시작");
+			int pno = -1;
+			while(rs.next()) {
+				pno = rs.getInt("pno");
+			}
+			System.out.println("반복문끝");
+			System.out.println("place_postNo : " +pno);
 			
 			/*place_basicinfo*/
 			query = "insert into place_basicinfo(pno, pname, category, oprtime, offdays, fee)"
@@ -58,25 +67,41 @@ public class PlaceDAO {
 			pstmt.setString(5, dto.getPlace().get("offdays"));
 			pstmt.setString(6, dto.getPlace().get("fee"));
 			pstmt.executeUpdate();
+			System.out.println("place_basicinfo 입력 성공");
 			
 			/*place_locinfo*/
 			query = "insert into place_locinfo(pno, address, url) values(?, ?, ?)";
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, pno);
 			pstmt.setString(2, dto.getAddress());
-			pstmt.setString(3, "API URL 어떻게 얻어오는지 알아야됨, 그리고 저장할 필요가 있는지 체크");
+			pstmt.setString(3, "API URL"); //저장할 필요가 있을까?
 			pstmt.executeUpdate();
+			System.out.println("place_locinfo 입력 성공");
 
-			/*place_imgage*/
-			query = "insert into place_image(pno, url1, url2, url3, url4, url5) values(?,?,?,?,?)";
-			pstmt = con.prepareStatement(query);
+			/*place_imgage ArrayList이기 때문에 들어가는 데이터 개수에 따라 쿼리문이 달라짐*/
+			query = "insert into place_image(pno, ";
+			//쿼리문-컬럼 만들기
+			for(int i=0; i<dto.getImgUrl().size(); i++) {
+				System.out.println(dto.getImgUrl().get(i).toString());
+				query += "url" + (i+1); //url1
+				if(i+1==dto.getImgUrl().size()) {query+=") values(?"; break;} //마지막 요소일 때
+				else query += ", ";
+			} //예시. size=2 → insert into place_image(pno, url1, url2) values(?
+			//쿼리문-values 만들기
+			for(int i=0; i<=dto.getImgUrl().size(); i++) {
+				if(i==dto.getImgUrl().size()) {query+=")"; break;} //마지막반복차수
+				else query +=",?";
+			}//예시. size=2 → insert into place_image(pno, url1, url2) values(?,?,?)
 			pstmt.setInt(1, pno);
 			for(int i=0; i<dto.getImgUrl().size(); i++) {
 				pstmt.setString(i+2, dto.getImgUrl().get(i));
 			}
+			pstmt=con.prepareStatement(query);
 			pstmt.executeUpdate();
-
+			System.out.println("place_image 입력 성공");
+			
 			//age 유도속성 알아내기
+			System.out.println("유도속성 구하기 시작");
 			query = "select birthdate from member where nickname = '" + dto.getNickname() + "'";
 			pstmt=con.prepareStatement(query);
 			rs = pstmt.executeQuery();
@@ -95,6 +120,7 @@ public class PlaceDAO {
 			}
 			
 			/*place_filter*/
+			System.out.println("필터 테이블");
 			query = "insert into place_filter(pno, paccess, pcomtype, pstyle, page, pkeyword) values(?,?,?,?,?,?)";
 			pstmt=con.prepareStatement(query);
 			pstmt.setInt(1, pno);
@@ -125,16 +151,15 @@ public class PlaceDAO {
 			pstmt.setString(6, keyword);
 			
 			pstmt.executeUpdate();
-			
-		}
-		catch (SQLException e) { e.printStackTrace(); }
+		} //end of try
+		catch (SQLException e) { e.printStackTrace(); result = e.getMessage(); }
 		finally {
 			try {
-			if(pstmt!=null) pstmt.close();
-			if(con!=null) con.close();
-				} catch (SQLException e) {	e.printStackTrace();	}
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(con!=null) con.close();
+			} catch (SQLException e) {e.printStackTrace();}
+			return result;
 		}
 	}
-	
-	
 }

@@ -7,7 +7,7 @@
 <title>로그인 처리</title>
 </head>
 <body>
-	<jsp:useBean id="dao" class="seoulMate.dao.MemberDAO" scope="session"/>
+	<jsp:useBean id="mDao" class="seoulMate.dao.MemberDAO" scope="session"/>
 	<!-- 로그인 폼에서 입력받은 사용자 정보 저장 -->
 	<%
 	String userId= request.getParameter("userId");
@@ -16,7 +16,7 @@
 	
 	<!-- DB에서 가져와서 비교 -->
 	<%
-	String nickname = dao.login(userId, password);
+	String nickname = mDao.login(userId, password);
 	if(nickname==null){
 		/*!수정 : 실제로는 일치하는 아이디와 비밀번호가 없다는 로그인 실패 팝업창으로 연결되어야 함*/
 		response.sendRedirect("main.jsp");

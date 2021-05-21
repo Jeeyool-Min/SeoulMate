@@ -36,6 +36,7 @@
 				item.write(file); //파일 업로드
 				//#파일크기 제한해야함
 				imgUrl.add(fileName);
+				System.out.println(fileName);
 			}
 		}
 	%>

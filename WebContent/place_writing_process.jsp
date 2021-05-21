@@ -11,14 +11,14 @@
 <title> 장소 등록 </title>
 </head>
 <body>
-	<jsp:useBean id="dao" class="seoulMate.dao.PlaceDAO" scope="session"/>
+	<jsp:useBean id="pDao" class="seoulMate.dao.PlaceDAO" scope="session"/>
 	<!-- 1단계 요청 파라미터 받아 DTO에 저장 -->
 	<%
 	MultipartRequest multi= new MultipartRequest(request, "c:\\upload", 5*1024*1024, "utf-8", new DefaultFileRenamePolicy());
 	PlaceDTO dto = PlaceDTO.getInstance();
 	
 	/*place_basicInfo*/
-	HashMap<String, String> placeBasic =null;
+	HashMap<String, String> placeBasic = new HashMap();
 	placeBasic.put("pname", multi.getParameter("pName"));
 	placeBasic.put("category", multi.getParameter("pCategory"));
 	placeBasic.put("oprtime", multi.getParameter("pTime"));
@@ -37,7 +37,7 @@
 	dto.setAddress(multi.getParameter("pAddress"));
 	
 	/*place_filter : 다중선택이므로 배열로 받음. age는 유도속성. 안쓸수도 있음*/
-	HashMap<String, String[]> placeCheck = null;
+	HashMap<String, String[]> placeCheck = new HashMap();
 	placeCheck.put("paccess", multi.getParameterValues("tripAccess"));
 	placeCheck.put("pcomtype", multi.getParameterValues("tripWith"));
 	placeCheck.put("pstyle", multi.getParameterValues("tripStyle"));
@@ -54,10 +54,14 @@
 	사용자로부터 입력받지 않고 DB와의 비교로 자동 생성되는 데이터이므로 DTO를 거치지 않고 바로 DAO에서 처리한다.-->
 	<% //#선행 : 로그인할 때만 글 작성이 가능하도록 web.xml 수정 필수
 	dto.setNickname(session.getAttribute("nickname").toString());
-	dto.setPtitle("pSubtitle"); //게시글 부제임(장소명X)
+	dto.setPtitle(multi.getParameter("pSubtitle")); //게시글 부제임(장소명X)
+	%>
 	
-	dao.submit();
-	response.sendRedirect("place_detail.jsp"); //#해당 글로 링크연결되도록 수정해야 함
+	
+	<%
+	out.print(pDao.submit());
+	
+	//response.sendRedirect("place_detail.jsp"); //#해당 글로 링크연결되도록 수정해야 함
 	%>
 	
 

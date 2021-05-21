@@ -25,6 +25,7 @@
 			System.out.println("오라클 연결 실패");
 			System.out.println("SQLException: " + ex.getMessage());
 		}
+		
 	%>
 </body>
 </html>

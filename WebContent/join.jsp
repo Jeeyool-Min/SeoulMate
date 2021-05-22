@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/membership/styles.css">
+    <link rel="stylesheet" href="resources/css/membership/styles.css">
     <title>Document</title>
 </head>
 
@@ -19,19 +19,19 @@
         <h1 class="all title">회원가입</h1>
         <div class="id all">
             <p class="p-all">아이디</p>
-            <input type="text" class="input-all" name="userId" id="userId">
+            <input type="text" class="input-all" name="userId" id="userId" required autofocus>
         </div>
         <div class="password all">
             <p class="p-all">비밀번호</p>
-            <input type="password" class="input-all" name="password" id="password">
+            <input type="password" class="input-all" name="password" id="password" required>
         </div>
         <div class="password all">
             <p class="p-all">비밀번호 확인</p>
-            <input type="password" class="input-all" name="passwordChk" id="passwordChk">
+            <input type="password" class="input-all" name="passwordChk" id="passwordChk" required>
         </div>
         <div class="name all">
             <p class="p-all">이름</p>
-            <input type="text" class="input-all" name="name" id="name">
+            <input type="text" class="input-all" name="name" id="name" required>
         </div>
         <div class="email all">
             <p class="p-all">이메일</p>
@@ -39,11 +39,11 @@
         </div>
         <div class="email all">
             <p class="p-all">닉네임</p>
-            <input type="text" class="input-all" name="nickname" id="nickname">
+            <input type="text" class="input-all" name="nickname" id="nickname" required>
         </div>
         <div class="birth all">
             <p class="p-all">생년월일</p>
-            <input class="year" type="text" placeholder="년(4자)" name="year" id="year">
+            <input class="year" type="text" placeholder="년(4자)" name="year" id="year" required>
             <select name="month" id="month">
                 <option value="">월</option>
                 <option value="1">1</option>

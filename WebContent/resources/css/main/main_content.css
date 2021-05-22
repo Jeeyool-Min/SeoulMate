@@ -55,8 +55,9 @@ article h2{
     font-weight: 300;
     -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3);
     position: absolute;
-	top: 197px;
+	top: 198px;
 	left: 0px;
+	transform: rotate(-0.03deg);
 }
 .hover_place{ width:230px; height:230px; display:block; margin:0px; font-size: 0; position: relative;}
 .hover_place:hover{ border-radius :5%; font-size: 12px; display:block; background-color:rgba(0, 0, 0, 0.4); color: white;}

@@ -18,6 +18,7 @@
 	<%
 	String nickname = mDao.login(userId, password);
 	if(nickname==null){
+		System.out.println("일치하는 아이디와 비밀번호가 없습니다.");
 		/*!수정 : 실제로는 일치하는 아이디와 비밀번호가 없다는 로그인 실패 팝업창으로 연결되어야 함*/
 		response.sendRedirect("main.jsp");
 	} else {

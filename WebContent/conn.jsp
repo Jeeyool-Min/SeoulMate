@@ -1,34 +1,34 @@
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
-<!DOCTYPE html>
+<%@ page import="java.sql.*"%>
+<%@ page import="seoulMate.DBConnection"%> <!-- DB연결 클래스를 import한다. -->
 <html>
+ 
 <head>
-<title>자바연동확인</title>
 </head>
 <body>
-<%
-	Connection conn=null;
-	String driver = "oracle.jdbc.driver.OracleDriver";
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	String userid = "System";
-	String password="wjd7dnjs";
-	Boolean connect = false;
-		
-	try{
-	    Class.forName(driver);
-	    conn=DriverManager.getConnection(url,userid,password); //자신의 아이디와 비밀번호
-	    connect = true;
-	    conn.close();
-	}catch(Exception e){
-	    connect = false;
-	    e.printStackTrace();
-	}
-%>
-<%
-	if(connect==true){%>
-	    연결되었습니다.
-	<%}else{ %>
-	    연결에 실패하였습니다.
-	<%}
-%> 
+        <table border="3" bordercolor="skyblue">
+        <tr bgcolor="skyblue"><td>이름<td>직업</tr>
+        
+        <%
+                // 쿼리문
+                        String query="select userid, nickname from member";
+                        
+                        // 커넥션 연결
+                        Connection conn = DBConnection.getConnection();
+                        
+                        // DB에 쿼리문을 보낸다.
+                        PreparedStatement pstmt = conn.prepareStatement(query);
+                        // 쿼리문의 결과값을 rs에 담는다.
+                        ResultSet rs = pstmt.executeQuery();
+                        
+                        // 결과값을 출력한다.
+                        while(rs.next()){
+                            out.println("<tr>");
+                            out.println("<td>"+rs.getString("userid"));
+                            out.println("<td>"+rs.getString("nickname"));
+                            out.println("</tr>");
+                        }
+                %>
+        </table>
+</body>
+</html>

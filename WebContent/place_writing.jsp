@@ -22,8 +22,8 @@
     <hr class="hr_write_title">
     <form name="writing_form" id="w_form" action="place_writing_process.jsp" method="post" enctype="multipart/form-data">
         <div class="img_preview">
-            <span id="preview"></span>
-            <input type="file" class="hiddenBtn" multiple="multiple" name="filename[]" accept="image/*"
+            <span id="preview" style="background-image:url('')"></span>
+            <input type="file" class="hiddenBtn" name="pImage" accept="image/*"
             	id="bizFile"   style="apperance: none; -webkit-apperance: none;">
             <label for="bizFile" class="fileBtn"> 이미지 첨부 </label>
             <!-- <span id="fileName">선택된 파일없음</span> -->

@@ -35,18 +35,18 @@
             </li>
             <li><span class="title"><label for="tripWith"> 동반유형 </label></span>
                 <div class="tripWith">
-                    <span class="set"><input type="checkbox" class="reset1" name="tripWith" id="chk14" value="14"><label for="chk14"> 가족 </label></span>
-                    <span class="set"><input type="checkbox" class="reset1" name="tripWith" id="chk15" value="15"><label for="chk15"> 친구 </label></span>
-                    <span class="set"><input type="checkbox" class="reset1" name="tripWith" id="chk16" value="16"><label for="chk16"> 연인 </label></span>
-                    <span class="set"><input type="checkbox" class="reset1" name="tripWith" id="chk17" value="17"><label for="chk17"> 혼자 </label></span><br>
+                    <span class="set"><input type="checkbox" class="reset1" name="tripWith" id="chk13" value="13"><label for="chk13"> 가족 </label></span>
+                    <span class="set"><input type="checkbox" class="reset1" name="tripWith" id="chk14" value="14"><label for="chk14"> 친구 </label></span>
+                    <span class="set"><input type="checkbox" class="reset1" name="tripWith" id="chk15" value="15"><label for="chk15"> 연인 </label></span>
+                    <span class="set"><input type="checkbox" class="reset1" name="tripWith" id="chk16" value="16"><label for="chk16"> 혼자 </label></span><br>
                 </div>
             </li>
             <li><span class="title"><label for="tripAccess"> 접근수단 </label></span>
                 <div class="tripAccess"> 
-                    <span class="set"><input type="checkbox" class="reset1" name="tripAccess" id="chk18" value="18"><label for="chk18"> 대중교통 </label></span>
-                    <span class="set"><input type="checkbox" class="reset1" name="tripAccess" id="chk19" value="19"><label for="chk19"> 도보 </label></span>
-                    <span class="set"><input type="checkbox" class="reset1" name="tripAccess" id="chk20" value="20"><label for="chk20"> 자동차 </label></span>
-                    <span class="set"><input type="checkbox" class="reset1" name="tripAccess" id="chk21" value="21"><label for="chk21"> 자전거 </label></span><br>
+                    <span class="set"><input type="checkbox" class="reset1" name="tripAccess" id="chk17" value="17"><label for="chk17"> 대중교통 </label></span>
+                    <span class="set"><input type="checkbox" class="reset1" name="tripAccess" id="chk18" value="18"><label for="chk18"> 도보 </label></span>
+                    <span class="set"><input type="checkbox" class="reset1" name="tripAccess" id="chk19" value="19"><label for="chk19"> 자동차 </label></span>
+                    <span class="set"><input type="checkbox" class="reset1" name="tripAccess" id="chk20" value="20"><label for="chk20"> 자전거 </label></span><br>
                 </div>
             </li>
             <li><span class="title"><label for="tripKeyword"> 추가 키워드 </label></span>

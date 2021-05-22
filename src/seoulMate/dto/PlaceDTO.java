@@ -16,11 +16,11 @@ public class PlaceDTO implements Serializable {
 	private String pinfo;
 	
 	
-	/*장소 기본정보 테이블 pname, category, oprtime, offdays, fee*/
+	/*장소 기본정보 테이블 pname, category, oprtime, offdays, fee, imgUrl*/
 	private HashMap<String, String> place;
 	
 	/*이미지 url테이블*/
-	private ArrayList<String> imgUrl = new ArrayList(5); 
+//	private ArrayList<String> imgUrl = new ArrayList(5); 
 	
 	/*위치정보*/
 	private String address;
@@ -47,8 +47,8 @@ public class PlaceDTO implements Serializable {
 	public void setPinfo(String pinfo) {this.pinfo = pinfo;}
 	public HashMap<String, String> getPlace() {	return place;}
 	public void setPlace(HashMap<String, String> place) {this.place = place;}
-	public ArrayList<String> getImgUrl() {return imgUrl;}
-	public void setImgUrl(ArrayList<String> imgUrl) {this.imgUrl = imgUrl;}
+	//public ArrayList<String> getImgUrl() {return imgUrl;}
+	//public void setImgUrl(ArrayList<String> imgUrl) {this.imgUrl = imgUrl;}
 	public String getAddress() {return address;}
 	public void setAddress(String address) {this.address = address;}
 	public String getLocUrl() {return locUrl;}
@@ -71,7 +71,8 @@ public class PlaceDTO implements Serializable {
             category varchar2(20), 
             oprtime varchar2(150), //한글로 최대 50자
             offdays varchar2(50), //한글로 최대 16자
-            fee varchar2(150)); //한글로 최대 50자*/
+            fee varchar2(150),
+            imgUrl varchar2(45); //한글로 최대 15자*/
 
 /*create table place_locinfo(pno number constraint fk_place_locinfo references place_post,
                              address varchar2(120) constraint pk_place_locinfo primary key, //한글 최대 40자

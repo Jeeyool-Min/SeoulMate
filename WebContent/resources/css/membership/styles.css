@@ -2,7 +2,9 @@
     src: url('font.ttf');
     font-family: 'basic';
 }
-
+body p{
+	    transform: rotate(-0.03deg);
+}
 body{
     background-color: rgb(254, 249, 244);
     width: 100%;
@@ -38,6 +40,7 @@ section{
 .input-all{
     width: 300px;
     height: 25px;
+    transform: rotate(-0.03deg);
 }
 .birth{
     margin-bottom: 30px;
@@ -45,11 +48,13 @@ section{
 .birth select{
     width: 108px;
     height: 31px;
+    transform: rotate(-0.03deg);
 }
 
 .year, .date{
     width: 100px;
-    height: 25px;   
+    height: 25px;
+    transform: rotate(-0.03deg);
 }
 .btn{
     margin-bottom: 30px;

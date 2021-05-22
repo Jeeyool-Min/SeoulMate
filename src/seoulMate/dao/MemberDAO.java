@@ -15,7 +15,7 @@ public class MemberDAO {
 	private static MemberDAO instance = new MemberDAO();
 
 	String driver = "oracle.jdbc.driver.OracleDriver"; //대소문자 구분, 오타주의
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	String url = "jdbc:oracle:thin:@localhost:1521/xe";
 	String userid = "System";
 	String passwd = "wjd7dnjs";
 	

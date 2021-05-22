@@ -16,10 +16,13 @@
 		/*최대 용량 제한*/
 		/*한번에 셋팅할수도 있음*/
 		List items = upload.parseRequest(request, 4096, 1000000L, path);
+		System.out.println("request가 empty?" + items.isEmpty());
 		Iterator params = items.iterator();
 		
-		ArrayList<String> imgUrl=null;
+		System.out.println(params.hasNext());
 		
+		ArrayList<String> imgUrl= new ArrayList<String>();
+		//fileItem 객체에 대한 예외처리 필요
 		while(params.hasNext()){
 			FileItem item = (FileItem) params.next();
 			if(item.isFormField()){ /*파일이 아니라면*/
@@ -29,6 +32,7 @@
 			} else{
 				String fileName = item.getName();
 				
+				System.out.println(fileName);
 				fileName = fileName.substring(fileName.lastIndexOf("\\") + 1);
 				long fileSize = item.getSize();
 				

@@ -12,7 +12,7 @@
 		java.sql.Connection conn = null;
 		try {
 			String driver = "oracle.jdbc.driver.OracleDriver";
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String url = "jdbc:oracle:thin:@localhost:1521/xe";
 			String user = "System";
 			String password = "wjd7dnjs";
 

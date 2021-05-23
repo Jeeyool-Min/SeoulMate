@@ -12,6 +12,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <script src="resources/js/jquery-3.6.0.min.js"></script>
     <script src="resources/js/search.js"></script>
+    <script src="resources/js/filechk.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff320fced3e6ec842c7367acc991287d&libraries=services"></script>
 </head>
@@ -21,21 +22,7 @@
     function findAddress(){
     	gu = window.open("searchAddress.jsp", "search_keyword","width=940, height=520, resizable, status=1");
     }
-    function readURL(input) {
-    	 if (input.files && input.files[0]) {
-    	  var reader = new FileReader();
-    	  
-    	  reader.onload = function (e) {
-    	   $("#preview").attr('src', e.target.result);  
-    	   
-    	  }
-    	  reader.readAsDataURL(input.files[0]);
-    	  }
-    	}
-    	// 이벤트를 바인딩해서 input에 파일이 올라올때 위의 함수를 this context로 실행합니다.
-    	$("#imgInput").change(function(){
-    	   readURL(this);
-    	});
+
     </script>
 	<jsp:include page="header2.jsp"/>
     <main>
@@ -53,7 +40,7 @@
         <div class="img_preview">
             <img id="preview" src="resources/image/d9d9d9&text=preview.png" alt="image">
             <input type="file" class="hiddenBtn" name="pImage" accept="image/*"
-            	id="imgInput"   style="apperance: none; -webkit-apperance: none;">
+            	id="imgInput"  style="apperance: none; -webkit-apperance: none;">
             <label for="imgInput" class="fileBtn"> 이미지 첨부 </label>
             <!-- <span id="fileName">선택된 파일없음</span> -->
         </div>

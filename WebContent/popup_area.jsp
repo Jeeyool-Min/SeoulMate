@@ -5,13 +5,30 @@
     <meta charset='utf-8'>
     <title>지역선택 팝업</title>
     <link rel='stylesheet' type='text/css' media='screen' href='resources/css/common/popup_site.css'>
-    <script src='main.js'></script>
 </head>
 <body>
-<div id="districtWrap" class="wrap_pop" style="display:block; position:absolute;">
-    <div id="districtPop" class="pop" style="position:absolute; left:50%; top:100.286px;">
+    <script type="text/javascript" src="resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+var guArray = ['전체','강남구','강동구','강북구','강서구','관악구','광진구','구로구','금천구','노원구','도봉구','동대문구','동작구',
+	'마포구','서대문구','서초구','성동구','성북구','송파구','양천구','영등포구','용산구','은평구','종로구','중구','중랑구'];
+	
+function setGuNm(code){
+	var areaname = '';
+	for( var i=0; i<guArray.length; i++) {
+		if( i == code ) {
+			areaname = guArray[code];
+			break;
+		}
+	}
+		if(confirm(areaname + "를 선택합니다.")){
+		$('#destination', opener.document).val(areaname);
+		window.close();
+		return areaname;}
+}
+</script>
+<div id="districtWrap" class="wrap_pop" style="display:block; position:absolute; z-index:110;">
+    <div id="districtPop" class="pop" style="position:absolute; left:50%;">
         <div class="tit"> <h2> <b> 여행지 </b> 선택</h2>
-            <button type="button" class="btn_close1" onclick="close()";> 닫기 </button></div>
            <!--<button type="button" class="btn_close1" onclick="hidePopup('spArea')";> 닫기 </button></div>-->
         <div id="districtBox" class="choice">
             <ul>

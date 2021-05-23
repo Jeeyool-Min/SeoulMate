@@ -68,7 +68,7 @@
 <script type="text/javascript" src="resources/js/jquery-3.6.0.min.js"></script>
 <script>
 var id = opener.$("#placeName").val(); //부모창에서 id가 placeAddress인 태그의 val()
-$("#keyword").val(id); //자식창에서 id가 child인 val에 id를 넣기
+$("#keyword").val(id); //자식창에서 id가 keyword인 val에 id를 넣기
 
 // 마커를 담을 배열입니다
 var markers = [];

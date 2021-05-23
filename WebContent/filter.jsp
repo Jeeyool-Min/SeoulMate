@@ -81,6 +81,5 @@
         </div>
     </form>
     </div>
-    <include file="popup_area.jsp">
 </body>
 </html>

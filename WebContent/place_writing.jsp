@@ -11,27 +11,54 @@
     <link rel='stylesheet' type='text/css' media='screen' href='resources/css/place.css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <script src="resources/js/jquery-3.6.0.min.js"></script>
+    <script src="resources/js/search.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff320fced3e6ec842c7367acc991287d&libraries=services"></script>
 </head>
 
 <body>
+    <script type="text/javascript">
+    function findAddress(){
+    	gu = window.open("searchAddress.jsp", "search_keyword","width=940, height=520, resizable, status=1");
+    }
+    function readURL(input) {
+    	 if (input.files && input.files[0]) {
+    	  var reader = new FileReader();
+    	  
+    	  reader.onload = function (e) {
+    	   $("#preview").attr('src', e.target.result);  
+    	   
+    	  }
+    	  reader.readAsDataURL(input.files[0]);
+    	  }
+    	}
+    	// 이벤트를 바인딩해서 input에 파일이 올라올때 위의 함수를 this context로 실행합니다.
+    	$("#imgInput").change(function(){
+    	   readURL(this);
+    	});
+    </script>
 	<jsp:include page="header2.jsp"/>
     <main>
     <article class="write">
         <h2 class="tit_write"> 혼자 알던 <b>여행지</b>를 공유해요</h2>
     <hr class="hr_write_title">
     <form name="writing_form" id="w_form" action="place_writing_process.jsp" method="post" enctype="multipart/form-data">
+     <div class="first_line first">
+     <label for="placeName">장소명*</label><input type="text" id="placeName" name="pName" size="5" autofocus required maxlength="15">
+     <button type="button" class="btn addSchBtn" onclick="findAddress()">장소 검색</button>
+     </div>
+     <div class="first_line second">
+     <label for="placeSubtitle">부제*</label><input type="text" id="placeSubtitle" name="pSubtitle" required maxlength="30">
+     </div>
         <div class="img_preview">
-            <span id="preview" style="background-image:url('')"></span>
+            <img id="preview" src="resources/image/d9d9d9&text=preview.png" alt="image">
             <input type="file" class="hiddenBtn" name="pImage" accept="image/*"
-            	id="bizFile"   style="apperance: none; -webkit-apperance: none;">
-            <label for="bizFile" class="fileBtn"> 이미지 첨부 </label>
+            	id="imgInput"   style="apperance: none; -webkit-apperance: none;">
+            <label for="imgInput" class="fileBtn"> 이미지 첨부 </label>
             <!-- <span id="fileName">선택된 파일없음</span> -->
         </div>
         <div class="basicInfo">
         <ul>
-            <li><label for="placeName">장소명*</label><input type="text" id="placeName" name="pName" size="5" autofocus required maxlength="15"></li>
-            <li><label for="placeSubtitle">부제*</label><input type="text" id="placeSubtitle" name="pSubtitle" size="10" required maxlength="20"></li>
             <li><label for="placeCategory">장소분류*</label><select id="placeCategory" name="pCategory" required>
                 <option value="store"> 상점 </option>
                 <option value="shopping"> 쇼핑몰 </option>
@@ -47,8 +74,8 @@
             <li><label for="placeFee">이용요금</label><input type="text" id="placeFee" name="pFee" size="10" maxlength="50"></li>
             <li class="placeAccess"><label for="placeOff">휴무일 *</label><input type="text" id="placeOff" name="pOff" placeholder="월,수" size="4"></li>
             <li class="placeAccess"><label for= "placeTime">이용시간</label><input type="text" id="placeTime" name="pTime" placeholder="12:00~19:00" maxlength="30" size="4"></li>
+            <li class="placeTel"><label for= "placeTel">연락처</label><input type="text" id="placeTel" name="pTel" maxlength="15" size="10"></li>
                 <li class="line3"><label for="placeAddress">주소 *</label><input type="text" id="placeAddress" name="pAddress" size="10" maxlength="40" required>
-                <button type="button" class="btn addSchBtn" onclick="findAddress.kakaoShow();">주소 검색</button></li>
         </ul>
         </div>
         <!-- 필터 시작 -->

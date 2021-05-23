@@ -87,7 +87,7 @@ input[type="checkbox" i]{
     align-items: flex-end;
     font-size: 12px;
 }
-.write .addSchBtn, .write .resetBtn{
+.write .resetBtn{
     position: relative;
     right: -218px;
 }

@@ -39,6 +39,7 @@
 	placeBasic.put("offdays", multi.getParameter("pOff"));
 	placeBasic.put("fee", multi.getParameter("pFee"));
 	placeBasic.put("imgUrl", imgUrl);
+	placeBasic.put("tel", multi.getParameter("pTel"));
 	dto.setPlace(placeBasic);
 	
 	%>

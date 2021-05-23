@@ -29,10 +29,7 @@ public class PlaceDAO {
 	public PlaceDAO() {
 		try {
 			Class.forName(driver);
-			System.out.println(getCurrentTimeStamp());
 			DriverManager.setLoginTimeout(20);
-			System.out.println(getCurrentTimeStamp());
-			
 		} catch(ClassNotFoundException e) {e.printStackTrace();}
 	}
 	
@@ -71,8 +68,8 @@ public class PlaceDAO {
 			
 			
 			/*place_basicinfo*/
-			query = "insert into place_basicinfo(pno, pname, category, oprtime, offdays, fee, imgUrl)"
-					+ " values(?, ?, ?, ?, ?, ?,?)";
+			query = "insert into place_basicinfo(pno, pname, category, oprtime, offdays, fee, imgUrl, tel)"
+					+ " values(?, ?, ?, ?, ?, ?,?,?)";
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, pno);
 			pstmt.setString(2, dto.getPlace().get("pname"));
@@ -81,6 +78,7 @@ public class PlaceDAO {
 			pstmt.setString(5, dto.getPlace().get("offdays"));
 			pstmt.setString(6, dto.getPlace().get("fee"));
 			pstmt.setString(7, dto.getPlace().get("imgUrl"));
+			pstmt.setString(8, dto.getPlace().get("tel"));
 			pstmt.executeUpdate();
 			System.out.println("place_basicinfo 입력 성공");
 			pstmt.setQueryTimeout(10);
@@ -103,11 +101,11 @@ public class PlaceDAO {
 			
 			pstmt=con.prepareStatement(query);
 			rs = pstmt.executeQuery();
-			System.out.print(rs.getString(1));
 			String age=null;
 			while(rs.next()) {
 				String birth= rs.getString(1);
-				int today = Calendar.getInstance().YEAR;
+				System.out.println(birth);
+				int today = Calendar.getInstance().get(Calendar.YEAR);
 				int bYear = Integer.parseInt(birth);
 				int ages = (today - bYear +1)/10;
 				switch (ages) {
@@ -130,18 +128,21 @@ public class PlaceDAO {
 			pstmt=con.prepareStatement(query);
 			pstmt.setInt(1, pno);
 			String access = "";
+			if(dto.getPcheck().get("paccess")!=null)
 			for(int i=0; i<dto.getPcheck().get("paccess").length; i++) {
 				access += dto.getPcheck().get("paccess")[i] + "/";
 			}
 			pstmt.setString(2, access); //이 값이 null이라면? null이란 String을 넣을것인가? 아니면 null로 바꾸나.
 			
 			String comtype = "";
+			if(dto.getPcheck().get("pcomtype")!=null)
 			for(int i=0; i<dto.getPcheck().get("pcomtype").length; i++) {
 				comtype += dto.getPcheck().get("pcomtype")[i] + "/";
 			}
 			pstmt.setString(3, comtype);
 			
 			String style = "";
+			if(dto.getPcheck().get("pstyle")!=null)
 			for(int i=0; i<dto.getPcheck().get("pstyle").length; i++) {
 				style += dto.getPcheck().get("pstyle")[i] + "/";
 			}
@@ -150,12 +151,14 @@ public class PlaceDAO {
 			pstmt.setString(5, age);
 			
 			String keyword = "";
+			if(dto.getPcheck().get("pkeyword")!=null)
 			for(int i=0; i<dto.getPcheck().get("pkeyword").length; i++) {
 				keyword += dto.getPcheck().get("pkeyword")[i] + "/";
 			}
 			pstmt.setString(6, keyword);
 			
 			String period = "";
+			if(dto.getPcheck().get("pperiod")!=null)
 			for(int i=0; i<dto.getPcheck().get("pperiod").length; i++) {
 				period += dto.getPcheck().get("pperiod")[i] + "/";
 			}

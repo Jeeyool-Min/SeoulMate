@@ -28,7 +28,7 @@ input[type="date" i]{
     border:1.5px rgb(178, 178, 178) solid;
     height: 20px;
 }
-input[type="submit" i], input[type="reset" i]{
+input[type="submit" i], input[type="reset" i], .filterWrap #resetBtn1{
     width:95px;
     font-family: 'KoPub Dotum';
     font-size: 12px;
@@ -40,7 +40,8 @@ input[type="submit" i], input[type="reset" i]{
     height: 25px;
     box-shadow: 1px 1px 0px 0.5px rgba(0, 0, 0, 0.25);
 }
-input[type="reset" i]{
+.filterWrap #resetBtn1{
+	padding-top:1px;
     background-color:  rgb(255,248,243);
     color: #3B3838;
     border: 0 none;

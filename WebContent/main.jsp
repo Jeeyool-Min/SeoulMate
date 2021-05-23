@@ -6,6 +6,7 @@
 <link rel='stylesheet' type='text/css' media='screen' href='resources/css/common/common_header.css'>
 <link rel='stylesheet' type='text/css' media='screen' href='resources/css/main/main_content.css'>
 <link rel='stylesheet' type='text/css' media='screen' href='resources/css/common/common_buttonChkbox.css'>
+
 </head>
 <body>
 	<%@ include file="header1.jsp" %>

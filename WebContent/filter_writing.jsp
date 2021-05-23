@@ -3,7 +3,15 @@
 <html>
 <head>
 <title>쓰기 모드에서 filter</title>
+<script src="resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	function chkReset(){
+		//.reset1클래스의 prop = chekced가 true인지 false인지 return
+		$('.reset1').prop('checked', false);
+	}
+</script>
 </head>
+
 <body>
 	    <!-- <span class="chkInfo" style="cursor: hand;" onclick="if(unfoldBtn.style.display=="none"> -->
         <div class="chkbox">
@@ -54,7 +62,7 @@
                         <input type="text" name="tripKeyword" id="tripKeyword" placeholder="찾으시는 키워드가 없나요? 직접 입력해보세요.">
                     </div>
                 </li>
-                <button class="btn resetBtn" id="resetBtn1" type="reset"> 선택모두해제 </button>
+                <button class="btn resetBtn" id="resetBtn1" type="button" onclick="chkReset()"> 선택모두해제 </button>
             </ul>
             </div>
         </div>

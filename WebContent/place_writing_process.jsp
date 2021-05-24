@@ -64,7 +64,11 @@
 	
 	//ArrayList, HashMap null값 허용하는걸로 알고 있음. 오류나는지 체크해볼 것
 	//기타
-	dto.setPinfo(multi.getParameter("pInfo"));
+	String pInfo = multi.getParameter("pInfo"); 
+	if(pInfo!=null && pInfo.contains("\r\n")){
+	pInfo = pInfo.replace("\r\n", "<br>");
+	}
+	dto.setPinfo(pInfo);
 	%>
 	
 	<!-- DAO의 메소드 호출(데이터베이스 접근) -->

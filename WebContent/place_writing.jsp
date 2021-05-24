@@ -39,7 +39,7 @@
      </div>
         <div class="img_preview">
             <img id="preview" src="resources/image/d9d9d9&text=preview.png" alt="image">
-            <input type="file" class="hiddenBtn" name="pImage" accept="image/*"
+            <input type="file" class="hiddenBtn" name="pImage" accept="image/*" required
             	id="imgInput"  style="apperance: none; -webkit-apperance: none;">
             <label for="imgInput" class="fileBtn"> 이미지 첨부 </label>
             <!-- <span id="fileName">선택된 파일없음</span> -->
@@ -47,21 +47,20 @@
         <div class="basicInfo">
         <ul>
             <li><label for="placeCategory">장소분류*</label><select id="placeCategory" name="pCategory" required>
-                <option value="store"> 상점 </option>
-                <option value="shopping"> 쇼핑몰 </option>
-                <option value="culture"> 문화시설 </option>
-                <option value="history"> 역사 </option>
-                <option value="park"> 공원 </option>
-                <option value="leports"> 레포츠 </option>
-                <option value="restaurant"> 음식점 </option>
-                <option value="cafe"> 카페 </option>
-                <option value="activity"> 이색체험공간 </option>
-                <option value="etc"> 기타 </option>
+                <option value="쇼핑"> 쇼핑 </option>
+                <option value="문화시설"> 문화시설 </option>
+                <option value="역사"> 역사 </option>
+                <option value="공원"> 공원 </option>
+                <option value="레포츠"> 레포츠 </option>
+                <option value="음식점"> 음식점 </option>
+                <option value="카페"> 카페 </option>
+                <option value="이색체험공간"> 이색체험공간 </option>
+                <option value="기타"> 기타 </option>
             </select></li>            
             <li><label for="placeFee">이용요금</label><input type="text" id="placeFee" name="pFee" size="10" maxlength="50"></li>
-            <li class="placeAccess"><label for="placeOff">휴무일 *</label><input type="text" id="placeOff" name="pOff" placeholder="월,수" size="4"></li>
-            <li class="placeAccess"><label for= "placeTime">이용시간</label><input type="text" id="placeTime" name="pTime" placeholder="12:00~19:00" maxlength="30" size="4"></li>
-            <li class="placeTel"><label for= "placeTel">연락처</label><input type="text" id="placeTel" name="pTel" maxlength="15" size="10"></li>
+            <li class="placeAccess"><label for="placeOff">휴무일 *</label><input type="text" id="placeOff" name="pOff" size="4" required></li>
+            <li class="placeAccess"><label for= "placeTime">이용시간</label><input type="text" id="placeTime" name="pTime" maxlength="50" size="4"></li>
+            <li class="placeTel"><label for= "placeTel">문의 및 안내</label><input type="text" id="placeTel" name="pTel" maxlength="15" size="10"></li>
                 <li class="line3"><label for="placeAddress">주소 *</label><input type="text" id="placeAddress" name="pAddress" size="10" maxlength="40" required>
         </ul>
         </div>

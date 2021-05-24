@@ -10,14 +10,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import seoulMate.D;
 import seoulMate.dto.PlaceDTO;
 
 public class PlaceDAO {
-	
-	String driver = "oracle.jdbc.driver.OracleDriver"; //대소문자 구분, 오타주의
-	String url = "jdbc:oracle:thin:@localhost:1521/xe";
-	String userid = "System";
-	String passwd = "wjd7dnjs";
+
 	
 	public static String getCurrentTimeStamp() {
 	    SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
@@ -28,7 +25,7 @@ public class PlaceDAO {
 	
 	public PlaceDAO() {
 		try {
-			Class.forName(driver);
+			Class.forName(D.driver);
 			DriverManager.setLoginTimeout(20);
 		} catch(ClassNotFoundException e) {e.printStackTrace();}
 	}
@@ -43,8 +40,7 @@ public class PlaceDAO {
 		try {
 			/*place_post: 글번호, 부제, 닉네임, 작성일, 좋아요, 조회수, 장소설명*/
 //			ArrayList<PlaceDTO> list = new ArrayList<PlaceDTO>();
-			System.out.println("닉네임 : "+dto.getNickname());
-			con = DriverManager.getConnection(url, userid, passwd);
+			con = DriverManager.getConnection(D.url, D.userid, D.passwd);
 			String query = "insert into place_post(pno, ptitle, nickname, pwrittenDate, plikeno, pinfo, pview)"
 							+ " values(pno_seq.nextval, ?, ?, sysdate, 0, ?, 0)"; //쿼리문 생성
 			
@@ -79,9 +75,9 @@ public class PlaceDAO {
 			pstmt.setString(6, dto.getPlace().get("fee"));
 			pstmt.setString(7, dto.getPlace().get("imgUrl"));
 			pstmt.setString(8, dto.getPlace().get("tel"));
+			pstmt.setQueryTimeout(20);
 			pstmt.executeUpdate();
 			System.out.println("place_basicinfo 입력 성공");
-			pstmt.setQueryTimeout(10);
 			
 			/*place_locinfo*/
 			query = "insert into place_locinfo(pno, address, url) values(?, ?, ?)";
@@ -94,9 +90,6 @@ public class PlaceDAO {
 
 			
 			//age 유도속성 알아내기
-			System.out.println("유도속성 구하기 시작");
-
-
 			query = "select to_char((select birthdate from member where nickname = '"+ dto.getNickname() +"'),'YYYY') from dual";
 			
 			pstmt=con.prepareStatement(query);
@@ -117,10 +110,8 @@ public class PlaceDAO {
 				default: age = "60+"; break;
 				}
 			}
-			System.out.print(age);
 			
 			/*place_filter : 체크박스로 배열에 여러 값을 저장하기 때문에, 배열이 존재하지 않으면(체크x) 에러 발생. 예외발생처리*/
-			System.out.println("필터 테이블");
 			/*pstyle 1:자연/경치 2:휴식/힐링 3:드라이브 4:야경 5:미식 6:핫플레이스 7:체험/학습 8:역사문화 
 			 * pperiod 9:당일치기 10:1박2일 11:2박3일 12:3박4일 | pcomtype 13:가족 14:친구 15:연인 16:혼자 |
 			 * paccess 17:대중교통 18:도보 19:자동차 20:자전거 | pkeyword 입력값*/
@@ -128,45 +119,50 @@ public class PlaceDAO {
 			pstmt=con.prepareStatement(query);
 			pstmt.setInt(1, pno);
 			String access = "";
-			if(dto.getPcheck().get("paccess")!=null)
-			for(int i=0; i<dto.getPcheck().get("paccess").length; i++) {
-				access += dto.getPcheck().get("paccess")[i] + "/";
+			if(dto.getPcheck().get("paccess")!=null) {
+				for(int i=0; i<dto.getPcheck().get("paccess").length; i++) {
+					access += dto.getPcheck().get("paccess")[i] + "/";
+				}
+				access = access.substring(0, access.length()-1);
 			}
 			pstmt.setString(2, access); //이 값이 null이라면? null이란 String을 넣을것인가? 아니면 null로 바꾸나.
 			
 			String comtype = "";
-			if(dto.getPcheck().get("pcomtype")!=null)
-			for(int i=0; i<dto.getPcheck().get("pcomtype").length; i++) {
-				comtype += dto.getPcheck().get("pcomtype")[i] + "/";
+			if(dto.getPcheck().get("pcomtype")!=null) {
+				for(int i=0; i<dto.getPcheck().get("pcomtype").length; i++) {
+					comtype += dto.getPcheck().get("pcomtype")[i] + "/";
+				}
+				comtype = comtype.substring(0, comtype.length()-1);
 			}
 			pstmt.setString(3, comtype);
 			
 			String style = "";
-			if(dto.getPcheck().get("pstyle")!=null)
-			for(int i=0; i<dto.getPcheck().get("pstyle").length; i++) {
-				style += dto.getPcheck().get("pstyle")[i] + "/";
+			if(dto.getPcheck().get("pstyle")!=null) {
+				for(int i=0; i<dto.getPcheck().get("pstyle").length; i++) {
+					style += dto.getPcheck().get("pstyle")[i] + "/";
+				}
+				style = style.substring(0, style.length()-1);
 			}
 			pstmt.setString(4, style);
 			
 			pstmt.setString(5, age);
 			
-			String keyword = "";
-			if(dto.getPcheck().get("pkeyword")!=null)
-			for(int i=0; i<dto.getPcheck().get("pkeyword").length; i++) {
-				keyword += dto.getPcheck().get("pkeyword")[i] + "/";
-			}
+			String keyword = dto.getPcheck().get("pkeyword")[0];
 			pstmt.setString(6, keyword);
 			
 			String period = "";
-			if(dto.getPcheck().get("pperiod")!=null)
-			for(int i=0; i<dto.getPcheck().get("pperiod").length; i++) {
-				period += dto.getPcheck().get("pperiod")[i] + "/";
+			if(dto.getPcheck().get("pperiod")!=null) {
+				for(int i=0; i<dto.getPcheck().get("pperiod").length; i++) {
+					period += dto.getPcheck().get("pperiod")[i] + "/";
+				}
+				period = period.substring(0, period.length()-1);
 			}
 			pstmt.setString(7, period);
 			pstmt.executeUpdate();
+			System.out.println("완료");
 			
 		} //end of try
-		catch (SQLException e) { e.printStackTrace(); result = e.getMessage(); }
+		catch (Exception e) { e.printStackTrace(); result = e.getMessage(); }
 		finally {
 			try {
 				System.out.print(result);
@@ -175,5 +171,7 @@ public class PlaceDAO {
 				if(con!=null) con.close();
 			} catch (final SQLException e) {e.printStackTrace();}
 		}
-	}
+	} //submit 끝
+
+	
 }

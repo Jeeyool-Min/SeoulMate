@@ -8,6 +8,7 @@
 <link rel='stylesheet' type='text/css' media='screen' href='resources/css/course.css'>
 </head>
 <body>
+
 	<%@ include file="header1.jsp" %>
 <main>
 	<div class="main_title">

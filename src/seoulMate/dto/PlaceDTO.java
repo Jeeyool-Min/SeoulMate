@@ -24,7 +24,6 @@ public class PlaceDTO implements Serializable {
 	
 	/*위치정보*/
 	private String address;
-	private String locUrl;
 	
 	/*작성자 체크 필터정보 paccess, pcomtype, pstyle, page[10대 50+], pkeyword*/
 	private HashMap<String, String[]> pcheck;
@@ -51,8 +50,6 @@ public class PlaceDTO implements Serializable {
 	//public void setImgUrl(ArrayList<String> imgUrl) {this.imgUrl = imgUrl;}
 	public String getAddress() {return address;}
 	public void setAddress(String address) {this.address = address;}
-	public String getLocUrl() {return locUrl;}
-	public void setLocUrl(String locUrl) {this.locUrl = locUrl;}
 	public HashMap<String, String[]> getPcheck() {return pcheck;}
 	public void setPcheck(HashMap<String, String[]> pcheck) {	this.pcheck = pcheck;}
 	public int getPview() {return pview;}

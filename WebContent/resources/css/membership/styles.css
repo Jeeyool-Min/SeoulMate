@@ -3,7 +3,9 @@
     font-family: 'basic';
 }
 body p{
-	    transform: rotate(-0.03deg);
+	padding-left:5px;
+	font-size:14px;
+	transform: rotate(-0.03deg);
 }
 body{
     background-color: rgb(254, 249, 244);
@@ -17,21 +19,36 @@ body{
 *{
     font-family: 'basic';
 }
-
+input[type="text" i], input[type="password" i] {
+    font-family: 'KoPub Dotum';
+    width: 298px;
+    font-size: 12px;
+    padding-left: 0;
+    border: 1.5px rgb(178, 178, 178) solid;
+    height: 20px;
+    margin:0 5px;
+}    
 section{
-    width: 55%;
-    height: 90%;
+    position: relative;
+    margin:auto;
+    top: 50px;
+    width: 385px;
+    height: 350px;
     background: #fff;
     display: flex;
     flex-direction: column;
     align-items: baseline;
 }
+.loginform{
+	margin:auto;
+}
 .all{
-    padding-left: 200px;
+	margin:auto;
 }
 
 .title{
-    font-size: 3rem;
+	margin-top:30px;
+    font-size: 24px;
 }
 .p-all{
     font-size: 1.4rem;
@@ -57,17 +74,20 @@ section{
     transform: rotate(-0.03deg);
 }
 .btn{
+    width:300px;
+	height:30px;
+	font-size:14px;
     margin-bottom: 30px;
+    transform:rotate(-0.03deg);
+    padding:0;
+    box-shadow: 1px 1px 0px 0.5px rgb(0 0 0 / 25%);    
 }
+
 .btn button{
-    width: 350px;
-    height: 35px;
-    box-shadow: 0px 4px 3px rgb(178, 178, 178);
     cursor: pointer;
     border: none;
-    background: rgb(131, 117, 101);
+    background:rgb(148,127,116);
     color: #fff;
-    font-size: 1.2rem;
     font-weight:100;
 }
 .Login{
@@ -75,11 +95,14 @@ section{
 }
 
 .close{
-    width:20px;
-    height: 20px;
+    width:12px;
+    height: 12px;
     float: right;
     padding: 10px;
     cursor: pointer;
+}
+.goSignup.all {
+    height: 65px;
 }
 
 #close-div{
@@ -89,12 +112,8 @@ section{
 
 .goSignup button{
     background: rgb(253, 249, 243);
-    width: 350px;
-    height: 35px;
-    box-shadow: 0px 4px 3px rgb(178, 178, 178);
     cursor: pointer;
     border: none;
-    font-size: 1.2rem;
     font-weight:100;
     margin-bottom: 100px;
 }

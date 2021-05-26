@@ -1,3 +1,4 @@
+<%@page import="seoulMate.dto.PlaceDTO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,15 @@
 </head>
 
 <body>
+<%
+PlaceDTO dto2 = PlaceDTO.getInstance();
+
+String[] style = dto2.getPcheck().get("pstyle");
+String[] period = dto2.getPcheck().get("pperiod");
+String[] pcomtype = dto2.getPcheck().get("pcomtype");
+String[] paccess = dto2.getPcheck().get("paccess");
+%>
+
 	    <!-- <span class="chkInfo" style="cursor: hand;" onclick="if(unfoldBtn.style.display=="none"> -->
         <div class="chkbox">
         <input type="checkbox" class="unfoldBtn" id="unfoldBtn"><label for="unfoldBtn" class="labelBtn" onclick=""><img src="resources/image/unfold.png" alt=""></label>
@@ -59,12 +69,51 @@
             </li>
             <li><span class="title"><label for="tripKeyword"> 추가 키워드 </label></span>
                     <div class="tripKeyword" style="display: inline-block;">
+                    	<% if(dto2.getPcheck().get("pkeyword")!=null){%>
+                        <input type="text" name="tripKeyword" id="tripKeyword" placeholder="찾으시는 키워드가 없나요? 직접 입력해보세요." value="<%=dto2.getPcheck().get("pkeyword")[0]%>">
+                        <%}else{ %>
                         <input type="text" name="tripKeyword" id="tripKeyword" placeholder="찾으시는 키워드가 없나요? 직접 입력해보세요.">
+                        <%} %>
                     </div>
                 </li>
                 <button class="btn resetBtn" id="resetBtn1" type="button" onclick="chkReset()"> 선택모두해제 </button>
             </ul>
             </div>
         </div>
+        <script>
+	$('input:checkbox[name="tripStyle"]').each(function() {
+<%	if(style!=null)
+	for(int i=0; i<style.length; i++){ %>
+		if(this.value=='<%=style[i]%>')
+		{  	this.checked = true; 
+     	}
+	<%}%>
+	});
+	$('input:checkbox[name="tripDays"]').each(function() {
+<%	if(period!=null)
+	for(int i=0; i<period.length; i++){ %>
+		if(this.value=='<%=period[i]%>')
+		{  	this.checked = true; 
+     	}
+	<%}%>
+	});
+	$('input:checkbox[name="tripWith"]').each(function() {
+<%	if(pcomtype!=null)
+	for(int i=0; i<pcomtype.length; i++){ %>
+		if(this.value=='<%=pcomtype[i]%>')
+		{  	this.checked = true; 
+     	}
+	<%}%>
+	});
+	$('input:checkbox[name="tripAccess"]').each(function() {
+<%	if(paccess!=null)
+	for(int i=0; i<paccess.length; i++){ %>
+		if(this.value=='<%=paccess[i]%>')
+		{  	this.checked = true; 
+     	}
+	<%}%>
+	});
+
+</script>
 </body>
 </html>

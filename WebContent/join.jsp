@@ -6,16 +6,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="resources/css/membership/styles.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='resources/css/common/common_header.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='resources/css/membership/join.css'>
+    
     <title>Document</title>
 </head>
 
 <body>
+	<%@ include file="header1.jsp" %>
+	<main class="jmain" style="height:720px;">
     <section id="section">
-        <div id="close-div" onclick="disappear()">
-            <img class="close" src="../image/ui-02-512.png" alt="">
-        </div>
         <form name="joinForm" action="join_process.jsp" method="post">
+        <div class="wrapper">
         <h1 class="all title">회원가입</h1>
         <div class="id all">
             <p class="p-all">아이디</p>
@@ -66,8 +68,11 @@
                 <button type="submit" onclick="">회원가입</button>
             </a>
         </div>
+        </div>
         </form>
     </section>
+    </main>
+    	<%@ include file="footer2.jsp" %>
 </body>
 
 <script>

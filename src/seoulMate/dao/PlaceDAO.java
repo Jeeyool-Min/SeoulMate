@@ -14,14 +14,6 @@ import seoulMate.D;
 import seoulMate.dto.PlaceDTO;
 
 public class PlaceDAO {
-
-	
-	public static String getCurrentTimeStamp() {
-	    SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//dd/MM/yyyy
-	    Date now = new Date();
-	    String strDate = sdfDate.format(now);
-	    return strDate;
-	}
 	
 	public PlaceDAO() {
 		try {
@@ -80,11 +72,10 @@ public class PlaceDAO {
 			System.out.println("place_basicinfo 입력 성공");
 			
 			/*place_locinfo*/
-			query = "insert into place_locinfo(pno, address, url) values(?, ?, ?)";
+			query = "insert into place_locinfo(pno, address) values(?, ?)";
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, pno);
 			pstmt.setString(2, dto.getAddress());
-			pstmt.setString(3, "API URL"); //저장할 필요가 있을까?
 			pstmt.executeUpdate();
 			System.out.println("place_locinfo 입력 성공");
 
@@ -125,7 +116,7 @@ public class PlaceDAO {
 				}
 				access = access.substring(0, access.length()-1);
 			}
-			pstmt.setString(2, access); //이 값이 null이라면? null이란 String을 넣을것인가? 아니면 null로 바꾸나.
+			pstmt.setString(2, access); //""로 입력할 경우 DB엔 null로 들어감
 			
 			String comtype = "";
 			if(dto.getPcheck().get("pcomtype")!=null) {
@@ -172,6 +163,4 @@ public class PlaceDAO {
 			} catch (final SQLException e) {e.printStackTrace();}
 		}
 	} //submit 끝
-
-	
 }

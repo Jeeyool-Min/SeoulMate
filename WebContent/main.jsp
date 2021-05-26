@@ -13,7 +13,6 @@
 		}
 </script>
 </head>
-	<include file="popup_area.jsp">
 <body>
 	<%@ include file="header1.jsp" %>
 <main>

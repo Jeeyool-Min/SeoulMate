@@ -121,8 +121,8 @@
 	
 	
 	pDao.submit();
-	
-	//response.sendRedirect("place_detail.jsp"); //#해당 글로 링크연결되도록 수정해야 함
+	//현재 pno를 가져와서 +1해야됨
+	//response.sendRedirect("place_detail.jsp?pno="); //#해당 글로 링크연결되도록 수정해야 함
 	%>
 	
 

@@ -5,6 +5,7 @@
 <html lang="ko">
 <head>
 <title>로그인 처리</title>
+<script src="resources/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<jsp:useBean id="mDao" class="seoulMate.dao.MemberDAO" scope="session"/>
@@ -18,17 +19,25 @@
 	<%
 	String nickname = mDao.login(userId, password);
 	if(nickname==null){
-		System.out.println("일치하는 아이디와 비밀번호가 없습니다.");
-		/*!수정 : 실제로는 일치하는 아이디와 비밀번호가 없다는 로그인 실패 팝업창으로 연결되어야 함*/
-		response.sendRedirect("main.jsp");
+		%>
+<script type="text/javascript">
+	alert("일치하는 아이디와 비밀번호가 없습니다.");
+	location.href="login.jsp";
+</script>
+		<%
 	} else {
 		/*로그인 성공시 회원의 아이디와 닉네임 정보를 세션에 저장*/
 		session.setAttribute("userID", userId); 
 		session.setAttribute("nickname", nickname);
-		/*nickname정보를 잘 가지고 오는지 실험용*/
-		out.println(session.getAttribute("nickname").toString() +"님 어서오세요.");
-	}
 	%>
+	<script>
+	opener.location.reload();
+	window.close();
+	</script>
+<%	
+
+	}
+%>
 
 </body>
 </html>

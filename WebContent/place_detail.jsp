@@ -12,6 +12,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='resources/css/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='resources/css/place.css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ff320fced3e6ec842c7367acc991287d&libraries=services"></script>
     <script src="resources/js/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
@@ -22,9 +23,17 @@
     <main class="main2">
    	 <%
    	String pno = request.getParameter("pno");
-   	 System.out.print(pno==null);
     PlaceDetailDTO dto = pDao3.loadPost(pno);
 		%>
+    <script>
+    	function confirmD(){
+    		if(confirm("정말로 삭제하시겠습니까?")){
+    			location.replace("place_delete_process.jsp?pno=<%=pno%>");
+    		}else{
+    			return false;
+    		}
+    	}
+    </script>
 			
         <div class="titleType1">
             <h1 id="topTitle"><%=dto.getPname() %></h1>
@@ -33,6 +42,15 @@
             <div class="area_subtitle"><%=dto.getPtitle() %></div>
             <br><br>
             <div class="post_area">
+            <% 
+            String nickname = session.getAttribute("nickname").toString();
+	            if(nickname.equals("관리자")){
+            %>
+            	<span class="admin">
+	            	<input type="submit" value="수정" onclick="javascript: location.href='./place_update.jsp?pno=<%=pno%>'" />
+	            	<input type="submit" value="삭제" onclick="confirmD()" />
+            	</span>
+	       <%} %>     		
                 <div class="wrap_post_button">
                 <button type="button" class="btn_like" onclick="setLike();"><span class="ico">좋아요</span><span
                         class="num" id="conLike"> <%=dto.getPlikeno() %> </span></button>
@@ -110,11 +128,12 @@
                     </div>
                 </div>
             </div>
-
+			<!-- 지도정보 불러오기 -->
+			<span id="placeAddress" style="display:none;"><%=dto.getAddress()%></span>
             <div class="mapView">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.2925471921517!2d126.92321921526866!3d37.524600579805806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9fa9acf4bb85%3A0x94ff30722a96cbde!2z642UIO2YhOuMgCDshJzsmrg!5e0!3m2!1sko!2skr!4v1620116026562!5m2!1sko!2skr"
-                    width="700" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            	<div width="700" hegiht="350" style="border:0" loading="lazy" style="border:0">
+            		<jsp:include page="loadMap.jsp"/>
+            	</div>
             </div>
 
             <div class="wrap_contView" id="detailinfoview">
@@ -125,7 +144,7 @@
                             <ul>
                                 <li><strong>장소분류  </strong><span> <%=dto.getCategory() %></span></li>
                                 <li><strong>문의 및 안내  </strong><span><%=dto.getTel() %></span></li>
-                                <li><strong>주소  </strong><span> <%=dto.getAddress() %></span></li>
+                                <li><strong>주소  </strong><span><%=dto.getAddress()%></span></li>
                                 <li><strong>이용시간  </strong><span><%=dto.getOprtime() %><br></span></li>
                                 <li><strong>휴무일  </strong><span><%=dto.getOffdays() %></span></li>
                                 <li><strong>이용요금  </strong><span> <%=dto.getFee() %></span></li>

@@ -22,6 +22,33 @@ public class PlaceDAO {
 		} catch(ClassNotFoundException e) {e.printStackTrace();}
 	}
 	
+	public int getPno() {
+		PlaceDTO dto = PlaceDTO.getInstance();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int pno=-1;
+		try {
+			con = DriverManager.getConnection(D.url, D.userid, D.passwd);
+			
+			String query = "select pno from (select pno from place_post where nickname='" + dto.getNickname() + "' order by pwrittenDate desc) where rownum=1";
+			pstmt = con.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				pno = rs.getInt("pno");
+			}
+		}catch (Exception e) { e.printStackTrace(); }
+		finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(con!=null) con.close();
+			} catch (final SQLException e) {e.printStackTrace();}
+		}
+		return pno;
+	}
+	
+	
 	public void submit() { 
 		PlaceDTO dto = PlaceDTO.getInstance();
 		Connection con = null;

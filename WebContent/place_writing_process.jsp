@@ -82,45 +82,10 @@
 	<img src="upload/<%=dto.getPlace().get("imgUrl")%>" style="width:300px" alt="이미지">
 	
 	<%
-	
-	out.println("장소명: " +dto.getPlace().get("pname") +"<br>");
-	out.println("장소 부제: " +dto.getPtitle() +"<br>");
-	out.println("카테고리: " +dto.getPlace().get("category")+"<br>");
-	out.println("운영시간: " +dto.getPlace().get("oprtime")+"<br>");
-	out.println("휴무: " +dto.getPlace().get("offdays")+"<br>");
-	out.println("이용요금: " +dto.getPlace().get("fee")+"<br>");
-	out.println("파일명: " +dto.getPlace().get("imgUrl")+"<br>");
-	out.println("====================================="+"<br>");
-	out.println("글쓴이: " +dto.getNickname()+"<br>");
-	out.println("장소설명: " +dto.getPinfo()+"<br>");
-	
-	if(dto.getPcheck().get("paccess")!=null)
-	for(int i=0; i<dto.getPcheck().get("paccess").length; i++){
-	out.println("접근수단: " + dto.getPcheck().get("paccess")[i]+"<br>");
-	} else{out.println("접근 수단 입력값이 없습니다.");}
-	
-	if(dto.getPcheck().get("pcomtype")!=null)
-	for(int i=0; i<dto.getPcheck().get("pcomtype").length; i++){
-	out.println("동반: " + dto.getPcheck().get("pcomtype")[i]+"<br>");
-	}else{out.print("동반 형태 체크X");}
-	
-	if(dto.getPcheck().get("pstyle")!=null)
-	for(int i=0; i<dto.getPcheck().get("pstyle").length; i++){
-	out.println("여행스타일: " + dto.getPcheck().get("pstyle")[i]+"<br>");
-	}else{out.println("여행스타일 체크X");}
-	
-	if(dto.getPcheck().get("pkeyword")!=null)
-	for(int i=0; i<dto.getPcheck().get("pkeyword").length; i++){
-	out.println("키워드: " + dto.getPcheck().get("pkeyword")[i]+"<br>");
-	}
-	if(dto.getPcheck().get("pperiod")!=null)
-	for(int i=0; i<dto.getPcheck().get("pperiod").length; i++){
-	out.println("여행기간: " + dto.getPcheck().get("pperiod")[i]+"<br>");
-	}
-	else out.println("키워드 체크X");
-	
-	
 	pDao.submit();
+	int pno = pDao.getPno();
+	String sendTo = "place_detail.jsp?pno="+pno;
+	response.sendRedirect(sendTo);
 	//현재 pno를 가져와서 +1해야됨
 	//response.sendRedirect("place_detail.jsp?pno="); //#해당 글로 링크연결되도록 수정해야 함
 	%>

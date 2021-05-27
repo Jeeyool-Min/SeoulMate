@@ -31,8 +31,15 @@
 		session.setAttribute("nickname", nickname);
 	%>
 	<script>
-	opener.location.reload();
+	//회원가입 완료화면에서 로그인한다면 메인으로, 다른 화면에선 그화면에서 새로고침
+	var parent = 'http://localhost:9000/SeoulMate/join_complete.jsp';
+	if(window.opener.document.URL == parent){
+		opener.location.replace("main.jsp");
+	}else{
+		opener.location.reload();
+	}
 	window.close();
+
 	</script>
 <%	
 

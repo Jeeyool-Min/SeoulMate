@@ -22,19 +22,14 @@
     function findAddress(){
     	gu = window.open("searchAddress.jsp", "search_keyword","width=940, height=520, resizable, status=1");
     }
-    
     function checkImg(){
     	var imgname = document.getElementById('imgInput').value;
-    	console.log(imgname=="");
-    	console.log(imgname==null);
-    	confirm("이미지가 맞습니까 :" + imgname);
     	if(imgname==""){
     		alert("이미지를 첨부해주세요.");
     		return false;
     	}
-    	return false;
+    	return true;
     }
-
     </script>
 	<jsp:include page="header2.jsp"/>
     <main>
@@ -83,7 +78,7 @@
         </div>
         <!-- 여행지 설명란 및 등록버튼 -->
         <textarea name="pInfo" cols="115" rows="5" placeholder="여행지를 자세히 소개하세요 (선택사항)" maxlength="400"></textarea>
-        <button type="submit" onsubmit="return checkImg()" class="btn submitBtn" name="등록"> 등록 </button>
+        <button type="submit" onclick="return checkImg()" class="btn submitBtn" name="등록"> 등록 </button>
     </form>
     </article>
     </main>

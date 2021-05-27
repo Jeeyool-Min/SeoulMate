@@ -11,6 +11,7 @@
 </head>
 <script type="text/javascript">
 	function login(){
+		
     	window.open("login.jsp","login","width=700, height=520, status=1");
 	}
 </script>

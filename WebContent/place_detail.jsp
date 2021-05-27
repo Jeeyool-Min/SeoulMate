@@ -43,8 +43,11 @@
             <br><br>
             <div class="post_area">
             <% 
-            String nickname = session.getAttribute("nickname").toString();
+            Object sObj = session.getAttribute("nickname");
+            if(sObj !=null){
+            String nickname = sObj.toString();
 	            if(nickname.equals("관리자")){
+            }
             %>
             	<span class="admin">
 	            	<input type="submit" value="수정" onclick="javascript: location.href='./place_update.jsp?pno=<%=pno%>'" />

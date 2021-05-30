@@ -27,26 +27,26 @@ public class MemberDAO {
 	public static MemberDAO getInstance() {	return instance;}
 	
 	//회원의 모든 정보 불러오기 [지금 당장은 안쓰지만, 나중에 위해]
-	public ArrayList<MemberDTO> selectAll(){
-		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+	public MemberDTO selectAll(String user){
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null; //executeQuery의 리턴타입
+		MemberDTO dto = new MemberDTO();
 				
 		try { 
 			con = DriverManager.getConnection(url, userid, passwd);
-			String query = "select * from member"; //쿼리문 생성
+			String query = "select * from member where nickname ='" + user+"'"; //쿼리문 생성
 			pstmt = con.prepareStatement(query);
 			rs = pstmt.executeQuery(); //SQL 안 select 쿼리 실행. 질의결과를 rs에 받는다 
 			while(rs.next()) {
-				MemberDTO dto = new MemberDTO();
-				dto.setName(rs.getString("name")); //인덱스는 필드명
-				dto.setNickname(rs.getString("nickname"));
+				String name = rs.getString("name");
+				dto.setName(name); //인덱스는 필드명
+				String nickname = rs.getString("nickname");
+				dto.setNickname(nickname);
 				dto.setUserId(rs.getString("userId"));
 				dto.setPassword(rs.getString("password"));
 				dto.setBirthdate(rs.getDate("birthdate"));
 				dto.setEmail(rs.getString("email"));
-				list.add(dto);
 			}
 		}
 		catch (SQLException e) { e.printStackTrace(); }
@@ -58,7 +58,7 @@ public class MemberDAO {
 				con.close();
 				} catch (SQLException e) {	e.printStackTrace();	}
 		}
-		return list;
+		return dto;
 	}//the end of selectAll method
 	
 	public String login(String userId, String password){
@@ -133,6 +133,33 @@ public class MemberDAO {
 		}
 	} //the end of join method
 	
+	public void update(String userId) {
+		MemberDTO dto = MemberDTO.getInstance();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			//DB연결 및 SQL문작성
+			con = DriverManager.getConnection(url, userid, passwd);
+			String query = "update member set password=?,nickname =?, email=?, birthdate=? where userId= '"+userId+"'";
+			
+			//value값 dto로부터 불러와서 저장
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, dto.getPassword());
+			pstmt.setString(2, dto.getNickname());
+			pstmt.setString(3, dto.getEmail());
+			pstmt.setDate(4, dto.getBirthdate());
+			pstmt.executeUpdate();  /*삽입, 수정, 삭제 관련 쿼리 실행*/
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+			if(pstmt!=null) pstmt.close();
+			if(con!=null) con.close();
+				} catch (SQLException e) {e.printStackTrace();}
+		}
+	}
 	
 }
  

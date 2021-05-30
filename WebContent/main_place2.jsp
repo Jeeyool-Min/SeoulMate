@@ -23,7 +23,7 @@ $(document).ready(function () {
 		<h2>이달의 인기 여행지</h2>
 		<jsp:useBean id="pDao2" class="seoulMate.dao.PlaceMainDAO" scope="session" />
             <%
-	        PlaceMainDTO[] dto = pDao2.selectAll();
+	        PlaceMainDTO[] dto = pDao2.selectTop6();
           	 for(int i=0; i<dto.length; i++){
 			%>
 		<div class="preview">

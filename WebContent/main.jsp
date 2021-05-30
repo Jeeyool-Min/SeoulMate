@@ -20,7 +20,7 @@
 	<section id="content">
 	<%@ include file="main_course.jsp" %>
 	 <hr class="hr_divider">
-	<%@ include file="main_place.jsp" %>    
+	<%@ include file="main_place2.jsp" %>    
 	</section>
 </main>
 	<%@ include file="footer.jsp" %>

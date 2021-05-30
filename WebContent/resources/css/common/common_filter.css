@@ -60,7 +60,7 @@
 }
 .tripKeyword{position:relative; top:-5px;}
 
-.tripDays{
+.tripDays, .tripAges{
     float:right;
     width:83%;
 }
@@ -90,7 +90,7 @@
 }
 .title label{ vertical-align: -3px;}
 .tripStyle label{ vertical-align: 2px;}
-.tripDays label{ vertical-align: 2px;}
+.tripDays label, .tripAges label{ vertical-align: 2px;}
 .tripWith label{ vertical-align: 2px;}
 .tripAccess label{ vertical-align: 2px;}
 .filter_ul input[type="text"]{

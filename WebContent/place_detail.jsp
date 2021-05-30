@@ -47,13 +47,12 @@
             if(sObj !=null){
             String nickname = sObj.toString();
 	            if(nickname.equals("관리자")){
-            }
             %>
             	<span class="admin">
 	            	<input type="submit" value="수정" onclick="javascript: location.href='./place_update.jsp?pno=<%=pno%>'" />
 	            	<input type="submit" value="삭제" onclick="confirmD()" />
             	</span>
-	       <%} %>     		
+	       <%}}%>     		
                 <div class="wrap_post_button">
                 <button type="button" class="btn_like" onclick="setLike();"><span class="ico">좋아요</span><span
                         class="num" id="conLike"> <%=dto.getPlikeno() %> </span></button>

@@ -82,13 +82,13 @@
                 <option value="기타"> 기타 </option>
             </select></li>
             <script type="text/javascript">
-            $(function(){
-	            if($('option').val=='<%=dto.getPlace().get("category")%>'){
-	            	$(this).prop("selected",true);
-	            }
-	            //다른 방법 : $('#testSelect').val('test2').prop("selected",true);
-            	
-            }());
+            var c = '<%=dto.getPlace().get("category")%>';
+            var sel = document.getElementById("placeCategory"); 
+            	for(var i=0; i<sel.length; i++){
+            		if(sel[i].value==c){ 
+            			sel[i].selected = true; 
+            			}
+            		}
             </script>        
             <li><label for="placeFee">이용요금</label><input type="text" id="placeFee" name="pFee" size="10" maxlength="50" value='<%=dto.getPlace().get("fee")%>'></li>
             <li class="placeAccess"><label for="placeOff">휴무일 *</label><input type="text" id="placeOff" name="pOff" size="4" required value='<%=dto.getPlace().get("offdays")%>'></li>

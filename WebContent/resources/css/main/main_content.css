@@ -30,6 +30,7 @@ article h2{
     height: 230px;
     display: inline-block;
     margin-bottom: 20px;
+    cursor:pointer;
 }
 
 .thumbnail_img{

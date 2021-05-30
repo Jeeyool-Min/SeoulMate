@@ -121,10 +121,10 @@ public class PlaceDAO {
 				int ages = (today - bYear +1)/10;
 				switch (ages) {
 				case 1: age = "10"; break;
-				case 2: age = "20"; break;
-				case 3: age = "30"; break;
-				case 4: age = "40"; break;
-				case 5: age = "50"; break;
+				case 2: age = "20，30"; break;
+				case 3: age = "20，30"; break;
+				case 4: age = "40，50"; break;
+				case 5: age = "40，50"; break;
 				default: age = "60+"; break;
 				}
 			}

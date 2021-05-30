@@ -9,7 +9,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='resources/css/common/common_header.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='resources/css/membership/join.css'>
     
-    <title>Document</title>
+    <title> 회원가입</title>
 </head>
 
 <body>

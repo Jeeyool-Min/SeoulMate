@@ -22,7 +22,7 @@
 	 String nickname = session.getAttribute("nickname").toString();
 %>
 		<span class="top_button"> <span class="nickname"> <%=nickname %></span>
-			<a id="join" href="join.jsp">회원수정</a> <a id="login"
+			<a id="join" href="update_member.jsp">회원수정</a> <a id="login"
 			href="logout.jsp">로그아웃</a>
 		</span>
 		<%

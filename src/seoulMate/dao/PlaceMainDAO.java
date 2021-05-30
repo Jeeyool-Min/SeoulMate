@@ -11,13 +11,13 @@ import seoulMate.D;
 import seoulMate.dto.PlaceMainDTO;
 
 public class PlaceMainDAO {
+	Connection con = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 	
 	public PlaceMainDTO[] selectTop6() {
 		ArrayList<PlaceMainDTO> list = new ArrayList<PlaceMainDTO>();
 		
-		Connection con = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
         String sql="select * from (select rank() over(order by p.pview desc, p.pno desc) as rank,"
         		+ " p.pview, p.pno, b.pname, p.ptitle, b.category, b.imgUrl, l.address from place_post p "
         		+ "INNER JOIN place_basicinfo b ON p.pno = b.pno INNER JOIN place_locinfo l ON p.pno=l.pno) where rank <=6";
@@ -45,11 +45,10 @@ public class PlaceMainDAO {
 				list.add(dto);
 			}
 			
-			if(rs != null) rs.close();
-			if(pstmt != null) pstmt.close();
-			if(con != null) con.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
+        } catch (SQLException e) {
+        	e.printStackTrace();
+        } finally {
+        	quitDB();
 		}
         
         int size = list.size();
@@ -58,15 +57,12 @@ public class PlaceMainDAO {
 		return main;
 	}
 	
-	public PlaceMainDTO[] selectAll() {
+	public PlaceMainDTO[] selectByView(int startPost, int endPost) {
 		ArrayList<PlaceMainDTO> list = new ArrayList<PlaceMainDTO>();
 		
-		Connection con = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-        String sql="select rank() over(order by p.pview desc, p.pno desc) as rank,"
+        String sql="select * from (select rank() over(order by p.pview desc, p.pno desc) as rank,"
         		+ " p.pview, p.pno, b.pname, p.ptitle, b.category, b.imgUrl, l.address from place_post p "
-        		+ "INNER JOIN place_basicinfo b ON p.pno = b.pno INNER JOIN place_locinfo l ON p.pno=l.pno";
+        		+ "INNER JOIN place_basicinfo b ON p.pno = b.pno INNER JOIN place_locinfo l ON p.pno=l.pno) where rank between ? and ?";
         try {
         	try {
     			Class.forName(D.driver);
@@ -74,6 +70,8 @@ public class PlaceMainDAO {
     		} catch(ClassNotFoundException e) {e.printStackTrace();}
 			con = DriverManager.getConnection(D.url, D.userid, D.passwd);
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startPost);
+			pstmt.setInt(2, endPost);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -90,17 +88,54 @@ public class PlaceMainDAO {
 				PlaceMainDTO dto = new PlaceMainDTO(rank, pview, pno, pname, ptitle, category, imgUrl, address);
 				list.add(dto);
 			}
-			
-			if(rs != null) rs.close();
-			if(pstmt != null) pstmt.close();
-			if(con != null) con.close();
+
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			quitDB();
 		}
         
         int size = list.size();
         PlaceMainDTO [] main = new PlaceMainDTO[size];
         list.toArray(main);
 		return main;
+	}
+	
+	public int getCount(){
+		int count = 0;
+		String sql = "select count(*) from place_post";
+		try {
+			con = getConnection();
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				count = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			quitDB();
+		}
+		return count; // 총 레코드 수 리턴
+	}
+
+	
+	private void quitDB() {
+		try {
+			if(rs != null) rs.close();
+			if(pstmt != null) pstmt.close();
+			if(con != null)	con.close();
+		} catch (SQLException e) {
+				e.printStackTrace();
+		}
+	}
+
+	private Connection getConnection() {
+		try {
+			con = DriverManager.getConnection(D.url, D.userid, D.passwd);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
 	}
 }

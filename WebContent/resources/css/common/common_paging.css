@@ -1,0 +1,30 @@
+@charset "utf-8";
+@import url(http://cdn.jsdelivr.net/npm/font-kopub@1.0/kopubdotum.min.css);
+
+.paging {
+    text-align: center;
+    margin-top: 50px;
+    width: 100%;
+    display: block;
+    height: 30px;
+}
+
+
+.paging span, .paging a {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Kopub Dotum';
+    display: inline-block;
+    transform: rotate(-0.03deg);
+    margin: 10px;
+}
+.paging span{
+	font-weight:700;
+    width: 25px;
+    margin:5px;
+    line-height: 25px;
+    font-weight: 700;
+    border-radius: 100%;
+    background: rgb(148,127,116);
+    color: rgb(255,248,243);
+}

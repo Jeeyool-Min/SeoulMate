@@ -21,7 +21,7 @@
             <ul class="filter_ul">
                 <li><span class="title"><label for="destination"> 지역 </label></span>
                     <div class="tripSite">
-                    <input type="text" id="destination" placeholder="여행지 선택" readonly="" name="tripArea" value="전체">
+                    <input type="text" id="destination" placeholder="여행지 선택" readonly="readonly" name="tripArea" value="전체">
                     <!--onclick은 자바스크립트-->
                     <button type="button" id="dstBtn" class="btn schBtn" onclick="popup()"><span class="web_only">여행지 </span>선택</button></div>
                 </li>

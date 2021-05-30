@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+.hover_place_li {
+    padding-bottom: 25px;
+    width: 200px;
+    height: 16px;
+    display: block;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.3);
+    word-break: keep-all;
+}
+.hover_place_ul {
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    padding-top: 55px;
+    font-family: 'KoPub Dotum';
+    font-weight: 300;
+    padding-left: 20px;
+    margin: 0px;
+}
+.hover_place:hover{ font-size: 14px; display:block; background-color:rgba(0, 0, 0, 0.4); color: white; transform:rotate(-0.03deg); word-break:keep-all;}
+
+.hover_place {
+    width: 230px;
+    height: 230px;
+    display: block;
+    margin: 0px;
+    font-size: 0;
+    position: relative;
+}
+
+.thumbnail_img {
+    background-color: white;
+    width: 230px;
+    height: 230px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    vertical-align: middle;
+}
+.description span {
+    color: #3B3838;
+    display: block;
+    transform: rotate(-0.03deg);
+    font-size: 15px;
+    padding: 10px 0 0 10px;
+    font-weight: 500;
+    font-family: 'KoPub Dotum';
+    font-weight: 600;
+}
+
+
+.thumbnail_txt {
+    /* margin: 20px; */
+    text-align: left;
+    width: 210px;
+    box-sizing: content-box;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    height: 25px;
+    margin: 0;
+    background-color: #3B3838;
+    font-family: 'KoPub Dotum';
+    font-size: 14px;
+    font-weight: 300;
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0px;
+    transform: rotate(-0.03deg);
+    padding-left: 20px;
+    color: white;
+}
+a.back {
+	clear:both;
+    transform: rotate(-0.03deg);
+    display: block;
+    font-weight: 600;
+    font-size: larger;
+    text-align: center;
+}
+
+.preview {
+	float:left;
+    margin: 20px;
+    padding: 0;
+    position: relative;
+    left: 30px;
+    width: 230px;
+    height: 330px;
+    display: inline-block;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+
+article h2 {
+    margin-top: 80px;
+    margin-left: 30px;
+    padding-left: 7px;
+    font-size: 24px;
+    border-left: #3B3838 4px solid;
+}
+

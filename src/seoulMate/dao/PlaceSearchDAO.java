@@ -11,7 +11,10 @@ import seoulMate.D;
 import seoulMate.dto.PlaceMainDTO;
 import seoulMate.dto.PlaceSearchDTO;
 
-public class placeSearchDAO {
+public class PlaceSearchDAO {
+	Connection con = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
 	String rp = ") ";
 	String or = "or ";
 	String strEnd = "%' ";
@@ -25,7 +28,7 @@ public class placeSearchDAO {
 	//서브쿼리(필수요건 : 키워드, 지역, 여행목적1~8) - 모두 만족시키는 결과 가져오기
 	
 	
-	public ArrayList<PlaceSearchDTO> makequery(PlaceSearchDTO dto) {
+	public String makequery(PlaceSearchDTO dto) {
 		String keyword;
 		String join1 = "Inner Join place_locinfo l on p.pno = l.pno and (l.address like '%" +dto.getGu() + "%') "; //지역 선택
 		String join2 = "Inner Join place_basicInfo b on p.pno = b.pno "; //imgUrl 가지고 오기 위해 조인
@@ -115,23 +118,26 @@ public class placeSearchDAO {
 			sql +=" on s.pno=f.pno";
 		}
 		System.out.println(sql);
-		ArrayList<PlaceSearchDTO> list = new ArrayList<PlaceSearchDTO>();
-		list = getResult(sql,list);
-		return list;
+		//list = getResult(sql, list, startRow, endRow);
+		//int recordNum = getfCount(sql);
+		return sql;
 	}
 
-	private ArrayList<PlaceSearchDTO> getResult(String sql, ArrayList<PlaceSearchDTO> list) {
-		Connection con = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
+	public ArrayList<PlaceSearchDTO> getResult(String sql, int startRow, int endRow) {
+		sql = "select * from "
+				+"(select rownum rn, pno, category, address, pname, imgUrl, page, paccess, pkeyword, pstyle, pcomtype from ("
+				+sql+")) where rn between ? and ?";
+		ArrayList<PlaceSearchDTO> list = new ArrayList<PlaceSearchDTO>();
     	int rsSize=0;
         try {
         	try {
     			Class.forName(D.driver);
     			DriverManager.setLoginTimeout(20);
     		} catch(ClassNotFoundException e) {e.printStackTrace();}
-			con = DriverManager.getConnection(D.url, D.userid, D.passwd);
+			con = getConnection();
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startRow); // sql 물음표에 값 매핑
+			pstmt.setInt(2, endRow);
 			rs = pstmt.executeQuery();
 			PlaceSearchDTO dto =null;
 			// s.pno, s.category, s.address, s.pname, s.imgUrl, f.page, f.paccess, f.pkeyword, f.pstyle, f.pcomtype 
@@ -203,15 +209,54 @@ public class placeSearchDAO {
 				dto = new PlaceSearchDTO(gu, page, paccess, pkeyword, pstyle, pcomtype, pno, category, pname, imgUrl, rsSize);
 				list.add(dto);
 				}
-			if(rs != null) rs.close();
-			if(pstmt != null) pstmt.close();
-			if(con != null) con.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			quitDB();
 		}
 		return list;
 	}
+
 	
+	//검색건수 구하기
+	public int getfCount(String sql){
+		int fCount = 0;
+		String query = "select count(*) from (" +sql +")";
+		try {
+			con = getConnection();
+			pstmt = con.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				fCount = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			quitDB();
+		}
+		return fCount; // 총 레코드 수 리턴
+	}
+	
+	private void quitDB() {
+		try {
+			if(rs != null) rs.close();
+			if(pstmt != null) pstmt.close();
+			if(con != null)	con.close();
+		} catch (SQLException e) {
+				e.printStackTrace();
+		}
+	}
+
+	private Connection getConnection() {
+		try {
+			con = DriverManager.getConnection(D.url, D.userid, D.passwd);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+
+
 
 		/*
 		select s.pno, s.category, s.address, s.pname, s.imgUrl, f.page, f.paccess, f.pkeyword, f.pstyle, f.pcomtype from

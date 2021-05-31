@@ -28,3 +28,8 @@
     background: rgb(148,127,116);
     color: rgb(255,248,243);
 }
+
+.search{
+    display: flow-root;
+    clear: both;
+}

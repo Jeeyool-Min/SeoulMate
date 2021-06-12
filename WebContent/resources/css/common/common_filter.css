@@ -1,0 +1,125 @@
+@import url(http://cdn.jsdelivr.net/npm/font-kopub@1.0/kopubdotum.min.css);
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+/* 
+*{
+    box-sizing: border-box;
+} */
+.filterOutWrap{
+    margin:auto;
+    margin-top: 5%;
+    background-color: rgb(255,248,243);
+    border-radius:15px;
+    padding-bottom: 20px;
+    width: 86%;
+    /* box-sizing: border-box; */
+    display: block;
+    /* height:430px; */
+    /* top:170px; */
+}
+
+.filterWrap{
+    position:relative;
+    box-sizing: border-box;
+    width:90%;
+    margin:auto;
+    padding: 15px;
+    height: 300px;
+    background: white;
+    border-radius:15px;
+    box-shadow: 2px 2px 2.88px 0.12px rgba(0, 0, 0, 0.15);
+}
+.tit_sch{
+    position: relative;
+    width:90%;
+    margin:auto;
+    padding : 20px 0px;
+    margin-bottom: 0px;
+    border-bottom: 1.5px solid rgb(217, 217, 217);
+}
+.filter_ul{ padding: 0; width:98%}
+.filterWrap li {
+    list-style: none;
+    padding-bottom: 35px;
+}
+.filterWrap .line2{
+    list-style: none;
+    padding-bottom: 62px;
+}
+.title{
+    font-family:'KoPub Dotum';
+    font-weight: bold;
+    font-size: 14px;
+    transform: rotate(-0.03deg);
+    width:17%;
+    float: left;
+}
+.tripSite, .tripWith, .tripAccess{
+    float:right;
+    width: 83%
+    /* float: right; */
+}
+.tripKeyword{position:relative; top:-5px;}
+
+.tripDays, .tripAges{
+    float:right;
+    width:83%;
+}
+.set{
+    font-size: 14px;
+    width:20%;
+    display: inline-block;
+    transform: rotate(-0.03deg);
+
+    padding-bottom: 10px;
+}
+.setDate{
+    font-size: 14px;
+    transform: rotate(-0.03deg);
+    width: 36%;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+#set1stDate{
+    padding-right:26px;
+}
+
+.date{
+    width:200px;
+    font-size: 14px;
+    transform: rotate(-0.03deg);
+}
+.title label{ vertical-align: -3px;}
+.tripStyle label{ vertical-align: 2px;}
+.tripDays label, .tripAges label{ vertical-align: 2px;}
+.tripWith label{ vertical-align: 2px;}
+.tripAccess label{ vertical-align: 2px;}
+.filter_ul input[type="text"]{
+    transform: rotate(-0.03deg);
+}
+
+.tripStyle{
+    float: right;
+    width: 83%
+}
+form #schInfo{ 
+    font-family: 'KoPubDotum';
+}
+/*�젒湲�, �렯移섍린 踰꾪듉*/
+.unfoldBtn ~label{
+    border: 0 none; height: 15px; width:26px; display: block;
+    position: relative; left:50%; top:-10px; margin-left: -13px; padding: 0; margin-top: 0;
+    cursor: pointer;}
+.unfoldBtn { position:relative; left:-9999px; width: 0; height: 0;}
+.unfoldBtn ~ label img{ height: 12px;}
+.unfoldBtn:checked + label{ transform: rotate(180deg) translateX(8px) translateY(0px);} 
+.filterOutWrap .labelBtn{
+    position: absolute;
+    top:90px;
+    left:325px;
+}
+.filterOutWrap .filterWrap{display: none;}
+
+.filterOutWrap .unfoldBtn:checked ~ .filterWrap{
+    display: block; position: relative; top:-10px; margin: 20px 38px 0px 38px;
+}
+

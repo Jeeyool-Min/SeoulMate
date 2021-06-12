@@ -1,0 +1,181 @@
+.tit_write{
+    font-weight: 200;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.hr_write_title{
+    width:800px; background-color: #D9D9D9; margin:auto; margin-bottom:30px; border-style: none; height:1.5px;
+}
+.basicInfo{
+	float:right;
+	display: inline-block;
+	top:20px;
+}
+.first_line{
+    display: inline-block;
+	width:400px;
+	height:100px;
+	position:relative;
+	left:68px;
+}
+.first_line.first{
+	width:350px;
+}
+#placeName{width:220px; display:inline-block;}
+
+
+.first_line.second{
+	float:right;
+	right:0;
+	left:22px;
+}
+
+.first_line label{
+	display: block;
+    padding-bottom: 5px;
+    font-size:14px;
+}
+.img_preview{
+    width:300px;
+    height: 350px;
+    text-align: end;
+    display: inline-block;
+    margin: 30px;
+    margin-left: 70px;
+    margin-top:0px;
+}
+.img_preview #preview{
+	object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width:300px;
+    height: 300px;
+    border: 2px solid rgb(217,217,217);
+    text-align: center;
+    display: inline-block;
+    vertical-align: center;
+}
+.basicInfo {
+    position: relative;
+    top: -5px;
+    width: 400px;
+    height:300px;
+    padding:30px;
+    padding-top: 0px;
+    display: inline-block;
+}
+.basicInfo ul{ margin-top: 0; margin-bottom: 0;}
+.basicInfo li:first-child{ margin-top: 0;}
+.basicInfo li{
+    list-style: none;
+    margin: 10px;
+    font-size: 14px;
+    transform: rotate(-0.03deg);
+}
+.basicInfo option{
+    transform: rotate(-0.03deg);
+}
+.basicInfo label{
+    display: block;
+    padding-bottom: 5px;
+}
+
+.first_line input, .basicInfo input[type="text" i], select{
+    box-sizing: border-box;
+    font-family: 'KoPub Dotum';
+    width:300px;
+    font-size: 12px;
+    padding-left:5px;
+    border:1.5px rgb(217, 217, 217) solid;
+    transform: rotate(-0.03deg);
+    height: 20px;
+}
+
+#fileName{
+    font-size: 12px;
+    transform: rotate(-0.03deg);
+}
+
+.chkInfo{
+	transform: rotate(-0.03deg);
+    margin: 20px;
+    width: auto;
+    height: auto;
+    display: block;
+}
+.chkInfo h3{
+    text-align: center;
+    margin:auto;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.chkInfo ul{
+    margin: 10px -250px;
+    width:500px;
+    position: relative;
+    left:50%;
+    padding: 0;
+    display: none;
+}
+
+.chkInfo li{
+    width:500px;
+    height: 30px;
+    list-style: none;
+}
+.chkInfo .line2{
+    height: 58px;
+}
+.basicInfo .line3{
+    height:70px;
+}
+.write textarea {
+    margin-top: 30px;
+    display:block; position: relative; margin: auto;
+    font-family: 'KoPub Dotum'; font-size: 12px; transform: rotate(-0.03deg);}
+.write h2{
+    border:none;
+}
+
+.chkbox_ul li #destination, .chkbox_ul #tripKeyword{
+    width:350px;
+    font-size: 12px;
+    transform: rotate(-0.03deg);
+}
+.chkBox{ width:844px; line-height: 20px; height: 20px;}
+.chkInfo input[type="text"]{
+    height:15px;
+    border: 1.5px rgb(217, 217, 217) solid;
+}
+.chkbox_ul .resetBtn{
+    position: relative;
+    right:0px;
+}
+.chkbox_ul .title{width:100px; font-size:12px;  transform: rotate(-0.03deg);}
+.chkbox_ul .set{
+    width: 96px;
+    font-size: 12px;
+    transform: rotate(-0.03deg);
+}
+.chkbox_ul li > div{
+    width:400px;
+    float:left;
+}
+.chkBox > label{
+    cursor:pointer;
+}
+.chkbox_ul .tripSite > #destination { width:365px;}
+.chkbox_ul .tripKeyword > #tripKeyword { width:277px; transform: translateY(5px);}
+.unfoldBtn:checked ~ .chkbox_ul{
+    width:500px; padding-top:20px; display: inline-block;
+}
+.chkbox_ul .resetBtn{
+    position: relative;
+    left: 395px;
+    top:-37px;
+}
+.fileBtn{
+    position: relative;
+    right:-2px;
+}

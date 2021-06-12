@@ -1,0 +1,30 @@
+.plan-title button {
+  font-family: 'KoPub Dotum';
+  cursor: pointer;
+  background: rgb(148,127,116);
+  color:white;
+  font-size: 12px;
+  font-weight: 300;
+  width:50px;
+  height: 20px;
+  border: 0 none;
+  transform: rotate(-0.03deg);
+  box-shadow: 1px 1px 0px 0.5px rgba(0, 0, 0, 0.25);
+}
+
+
+.plan-title .modifyBtn{
+  width:80px;
+  position: absolute;
+  right:0px;
+  top:40px;
+}
+
+input[type="date" i]{
+  font-family: 'KoPub Dotum';
+  width:130px;
+  font-size: 12px;
+  padding-left:5px;
+  border:1.5px rgb(178, 178, 178) solid;
+  height: 20px;
+}

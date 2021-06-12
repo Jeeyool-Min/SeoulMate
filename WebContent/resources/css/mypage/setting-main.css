@@ -1,0 +1,32 @@
+table {
+  margin-top: 10px;
+  border-collapse: collapse;
+  line-height: 70px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2.88px 0.12px rgb(0 0 0 / 15%);
+  width: 884px;
+  box-sizing: border-box;
+}
+
+.first-column {
+  width: 200px;
+  text-align: center;
+}
+
+.second-column {
+  width: 700px;
+  text-align: left;
+}
+
+table a {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+tr .fa-2x {	
+    font-size: 24px;
+}
+
+.even {
+  background: rgb(255,248,243);
+}

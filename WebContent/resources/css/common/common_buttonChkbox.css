@@ -1,0 +1,95 @@
+button{
+    font-family: 'KoPub Dotum';
+    background: rgb(148,127,116);
+    /* background-color:  rgb(255,248,243); */
+    color:white;
+    font-size: 12px;
+    font-weight: 300;
+    width:95px;
+    height: 25px;
+    border: 0 none;
+    transform: rotate(-0.03deg);
+    box-shadow: 1px 1px 0px 0.5px rgba(0, 0, 0, 0.25);
+}
+
+input[type="text" i]{
+    font-family: 'KoPub Dotum';
+    width:300px;
+    font-size: 12px;
+    padding-left:5px;
+    border:1.5px rgb(178, 178, 178) solid;
+    height: 20px;
+}
+input[type="date" i]{
+    font-family: 'KoPub Dotum';
+    width:130px;
+    font-size: 12px;
+    padding-left:5px;
+    border:1.5px rgb(178, 178, 178) solid;
+    height: 20px;
+}
+input[type="submit" i], input[type="reset" i], .filterWrap #resetBtn1{
+    width:95px;
+    font-family: 'KoPub Dotum';
+    font-size: 12px;
+    background: #3B3838;
+    background: rgb(148,127,116);
+    transform: rotate(-0.03deg);
+    color:white;
+    border: none;
+    height: 25px;
+    box-shadow: 1px 1px 0px 0.5px rgba(0, 0, 0, 0.25);
+}
+.filterWrap #resetBtn1{
+	padding-top:1px;
+    background-color:  rgb(255,248,243);
+    color: #3B3838;
+    border: 0 none;
+}
+
+input[type="checkbox" i]{
+    border:1.5px rgb(178, 178, 178) solid;
+}
+
+.hiddenBtn{
+    display:none;
+}
+.btn{
+    transform: rotate(-0.03deg);
+    font-size: 12px;
+}
+.write .submitBtn{
+    cursor: pointer;
+    display: block;
+    margin-left:695px;
+    margin-top: 20px;
+    width: 100px;
+}
+.fileBtn, .addSchBtn, .resetBtn{
+    color: black;
+    padding-top: 2px;
+    font-size: 12px;
+    height:15px;
+    width:80px;
+    text-align: center;
+    display: inline-block;
+    background-color:  rgb(255,248,243);
+    border: 2px solid rgb(255,248,243);
+    box-shadow: 1px 1px 0px 0.5px rgba(0, 0, 0, 0.25);
+    transform: rotate(-0.03deg);
+    cursor: pointer;
+}
+.addSchBtn, .resetBtn{
+    text-align: center;
+    margin-top: 5px;
+    width:80px;
+    height:21px;
+    box-sizing: border-box;
+    align-items: flex-end;
+    font-size: 12px;
+}
+.write .resetBtn{
+    position: relative;
+    right: -218px;
+}
+

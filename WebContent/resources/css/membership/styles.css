@@ -1,0 +1,137 @@
+@font-face{
+    src: url('font.ttf');
+    font-family: 'basic';
+}
+body p{
+	padding-left:5px;
+	font-size:14px;
+	transform: rotate(-0.03deg);
+}
+body{
+    background-color: rgb(254, 249, 244);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+*{
+    font-family: 'basic';
+}
+input[type="text" i], input[type="password" i] {
+    font-family: 'KoPub Dotum';
+    width: 298px;
+    font-size: 12px;
+    padding-left: 0;
+    border: 1.5px rgb(178, 178, 178) solid;
+    height: 20px;
+    margin:0 5px;
+}    
+section{
+    position: relative;
+    margin:auto;
+    top: 50px;
+    width: 385px;
+    height: 350px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+.loginform{
+	margin:auto;
+}
+.all{
+	margin:auto;
+}
+
+.title{
+	margin-top:30px;
+    font-size: 24px;
+}
+.p-all{
+    font-size: 1.4rem;
+}
+
+.input-all{
+    width: 300px;
+    height: 25px;
+    transform: rotate(-0.03deg);
+}
+.birth{
+    margin-bottom: 30px;
+}
+.birth select{
+    width: 108px;
+    height: 31px;
+    transform: rotate(-0.03deg);
+}
+
+.year, .date{
+    width: 100px;
+    height: 25px;
+    transform: rotate(-0.03deg);
+}
+.btn{
+    width:300px;
+	height:30px;
+	font-size:14px;
+    margin-bottom: 30px;
+    transform:rotate(-0.03deg);
+    padding:0;
+    box-shadow: 1px 1px 0px 0.5px rgb(0 0 0 / 25%);    
+}
+
+.btn button{
+    cursor: pointer;
+    border: none;
+    background:rgb(148,127,116);
+    color: #fff;
+    font-weight:100;
+}
+.Login{
+    margin-top: 30px;
+}
+
+.close{
+    width:12px;
+    height: 12px;
+    float: right;
+    padding: 10px;
+    cursor: pointer;
+}
+.goSignup.all {
+    height: 65px;
+}
+
+#close-div{
+    width: 100%;
+    float: right;
+}
+
+.goSignup button{
+    background: rgb(253, 249, 243);
+    cursor: pointer;
+    border: none;
+    font-weight:100;
+    margin-bottom: 100px;
+}
+
+.complete{
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginBtn{
+    margin-top: 40px;
+}
+
+.check{
+    width: 36px;
+    height: 36px;
+}

@@ -1,0 +1,88 @@
+*{
+  font-size: 14px;
+}
+main {
+  margin: auto;
+  width: 884px;
+}
+
+.plan-table {
+  border-radius: 15px;
+  box-shadow: 2px 2px 2.88px 0.12px rgb(0 0 0 / 15%);
+  width:884px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  border-collapse: collapse;
+  line-height: 50px;
+}
+
+.plan-table .tr-border{
+  border-bottom: 1px rgb(217, 217, 217) solid;
+}
+
+.even {
+  background: rgb(255,248,243);
+}
+
+.plan-table thead {
+  text-align: center;
+}
+
+.first-column {
+  width: 50px;
+  text-align: center;
+}
+
+.second-column {
+  width: 300px;
+}
+
+.third-column {
+  width: 170px;
+}
+
+.fourth-column {
+  width: 200px;
+}
+
+.fifth-cloumn {
+  width: 170px;
+}
+
+.colspan-button {
+  border-top: 1px rgb(217, 217, 217) solid;
+  width: 900px;
+  text-align: center;
+  border-radius: 0px 0px 15px 15px;
+
+}
+
+.table-title {
+  text-decoration: none;
+  color: black;
+}
+
+.plan-table .addBtn{
+box-shadow:none;
+background-color:transparent;
+width:800px;
+font-size: 14px;
+cursor: pointer;
+border-radius: 0;
+color:#3e3d3b;
+font-weight: 700;
+}
+
+.plan-table button{
+  font-family: 'KoPub Dotum';
+  cursor: pointer;
+  background: rgb(148,127,116);
+  color:white;
+  font-size: 12px;
+  font-weight: 300;
+  width:50px;
+  height: 20px;
+  border: 0 none;
+  transform: rotate(-0.03deg);
+  box-shadow: 1px 1px 0px 0.5px rgba(0, 0, 0, 0.25);
+}
